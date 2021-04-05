@@ -1,8 +1,0 @@
-db isntance indentifier: csce-315
-db master username: admin
-pass: admin123
-db name: polilime
-
-csce-315.c9ncqlvp1kw9.us-east-2.rds.amazonaws.com
-
-port: 3306
