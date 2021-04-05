@@ -1,0 +1,17 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+input[type="Search" i]::placeholder {
+	color: #212529;
+	color: rgba(33, 37, 41, 0.3);
+}
+
+.search-bar-edge {
+	border-radius: 1.5rem;
+}
+
+.round-button {
+	border-radius: 1.5rem;
+}
