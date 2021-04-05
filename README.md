@@ -1,2 +1,2 @@
-# CSCE_315_Project_3
+# PoliLime
 Web Application following Activities of Public Servants
