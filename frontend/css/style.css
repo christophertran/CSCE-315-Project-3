@@ -3,6 +3,11 @@
 	padding: 0px;
 }
 
+body {
+	padding-top: 4.5rem;
+	min-height: 4000px;
+}
+
 input[type="Search" i]::placeholder {
 	color: #212529;
 	color: rgba(33, 37, 41, 0.3);
@@ -15,3 +20,5 @@ input[type="Search" i]::placeholder {
 .round-button {
 	border-radius: 1.5rem;
 }
+
+
