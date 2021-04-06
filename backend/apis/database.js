@@ -45,3 +45,6 @@ class database {
         });
     }
 }
+
+// module.exports = database;
+exports.database = database;
