@@ -14,37 +14,53 @@ class database {
     }
 
     connect() {
-        this.connection.connect(function (err) {
-            if (err) {
-                console.error('Database connection failed: ' + err.stack);
-            } else {
-                console.log('Successfully connected to database');
-            }
-        });
+        if (this.connection) {
+            this.connection.connect(function (err) {
+                if (err) {
+                    console.error('Database connection failed: ' + err.stack);
+                } else {
+                    console.log('Successfully connected to database');
+                }
+            });
+        } else {
+            console.error('Connection has not been created');
+        }
     }
 
     query(_query) {
-        this.connection.query(_query, function (err, res, fields) {
-            if (err) {
-                console.error('Database query error');
-            } else {
-                res.forEach(element => {
-                    console.log(element)
+        return new Promise((resolve, reject) => {
+            if (this.connection) {
+                this.connection.query(_query, function (err, res, fields) {
+                    if (err) {
+                        console.error('Database query error');
+                        reject({});
+                    } else {
+                        if (res) {
+                            resolve(res);
+                        } else {
+                            reject({});
+                        }
+                    }
                 });
+            } else {
+                reject({});
             }
         });
     }
 
     disconnect() {
-        this.connection.end(function (err) {
-            if (err) {
-                console.error('Database disconnect failed: ' + err.stack);
-            } else {
-                console.log('Successfully disconnected to database');
-            }
-        });
+        if (this.connection) {
+            this.connection.end(function (err) {
+                if (err) {
+                    console.error('Database disconnect failed: ' + err.stack);
+                } else {
+                    console.log('Successfully disconnected to database');
+                }
+            });
+        } else {
+            console.error('Connection has not been created');
+        }
     }
 }
 
-// module.exports = database;
 exports.database = database;
