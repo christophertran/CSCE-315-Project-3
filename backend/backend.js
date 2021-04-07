@@ -1,13 +1,15 @@
 const { database } = require('./apis/database');
+const { news } = require('./apis/news');
 
 class backend {
     constructor() {
-        this.db = new database();
+        this.database = new database();
+        this.news = new news();
     }
 
-    async getNames() {
+    async getNamesFromDatabase() {
         var query = 'SELECT name FROM politicians;';
-        var results = await this.db.query(query);
+        var results = await this.database.query(query);
 
         var ret = [];
 
@@ -20,10 +22,10 @@ class backend {
         return ret;
     }
 
-    async getInformationByName(_name) {
+    async getInformationFromDatabaseByName(_name) {
         var query = 'SELECT * FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
 
-        return await this.db.query(query).then((result) => {
+        return await this.database.query(query).then((result) => {
             return result;
         }).catch((error) => {
             console.error("Query error: " + _name);
@@ -31,29 +33,38 @@ class backend {
         });
     }
 
-    async getNamesByState(_state) {
+    async getNamesFromDatabaseByState(_state) {
         var query = 'SELECT * FROM politicians WHERE state LIKE \'%' + _state.toLowerCase() + '%\';';
 
-        return await this.db.query(query).then((result) => {
+        return await this.database.query(query).then((result) => {
             return result;
         }).catch((error) => {
             console.error("Query error: " + _name);
             return {};
         });
+    }
+
+    async getArticlesFromNewsByName(_name, _size) {
+        var result = await this.news.getArticles(_name, _size);
+
+        if (result) {
+            return result['articles'];
+        }
     }
 
     disconnect() {
-        this.db.disconnect();
+        this.database.disconnect();
     }
 }
 
 async function test() {
     var bk = new backend();
 
-    // console.log(await bk.getNames());
-    // console.log(await bk.getInformationByName('richard shelby'));
-    // console.log(await bk.getInformationByName('billy mays'));
-    console.log(await bk.getNamesByState('Texas'));
+    // console.log(await bk.getNamesFromDatabase());
+    // console.log(await bk.getInformationFromDatabaseByName('richard shelby'));
+    // console.log(await bk.getInformationFromDatabaseByName('billy mays'));
+    // console.log(await bk.getNamesFromDatabaseByState('Texas'));
+    console.log(await bk.getArticlesFromNewsByName('biden', 3));
 
     bk.disconnect();
 };
