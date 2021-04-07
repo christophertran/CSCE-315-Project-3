@@ -1,10 +1,12 @@
 const { database } = require('./apis/database');
 const { news } = require('./apis/news');
+const { currents } = require('./apis/currents');
 
 class backend {
     constructor() {
         this.database = new database();
         this.news = new news();
+        this.currents = new currents();
     }
 
     async getNamesFromDatabase() {
@@ -45,11 +47,11 @@ class backend {
     }
 
     async getArticlesFromNewsByName(_name, _size) {
-        var result = await this.news.getArticles(_name, _size);
+        return await this.news.getArticles(_name, _size);
+    }
 
-        if (result) {
-            return result['articles'];
-        }
+    async getArticlesFromCurrentsByName(_name, _size) {
+        return await this.currents.getArticles(_name, _size);
     }
 
     disconnect() {
@@ -63,8 +65,9 @@ async function test() {
     // console.log(await bk.getNamesFromDatabase());
     // console.log(await bk.getInformationFromDatabaseByName('richard shelby'));
     // console.log(await bk.getInformationFromDatabaseByName('billy mays'));
-    // console.log(await bk.getNamesFromDatabaseByState('Texas'));
-    console.log(await bk.getArticlesFromNewsByName('biden', 3));
+    // // console.log(await bk.getNamesFromDatabaseByState('Texas'));
+    // console.log(await bk.getArticlesFromNewsByName('biden', 3));
+    // console.log(await bk.getArticlesFromCurrentsByName('biden', 3));
 
     bk.disconnect();
 };

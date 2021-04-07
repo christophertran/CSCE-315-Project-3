@@ -7,14 +7,16 @@ class news {
     }
 
     async getArticles(_name, _size) {
-        return await this.newsapi.v2.everything({
-            q: _name,
-            language: 'en',
-            sortBy: 'relevancy',
-            pageSize: _size,
-            page: 1
+        return await this.newsapi.v2.topHeadlines({
+            q: _name
         }).then(response => {
-            return response;
+            var articles = response['articles'];
+
+            if (articles.length < _size) {
+                return articles;
+            } else {
+                return articles.slice(0, _size);
+            }
         }).catch(error => {
             console.error(error);
             return {};
