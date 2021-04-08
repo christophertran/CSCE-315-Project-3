@@ -18,8 +18,6 @@ class database {
             this.connection.connect(function (err) {
                 if (err) {
                     console.error('Database connection failed: ' + err.stack);
-                } else {
-                    console.log('Successfully connected to database');
                 }
             });
         } else {
@@ -53,8 +51,6 @@ class database {
             this.connection.end(function (err) {
                 if (err) {
                     console.error('Database disconnect failed: ' + err.stack);
-                } else {
-                    console.log('Successfully disconnected to database');
                 }
             });
         } else {
