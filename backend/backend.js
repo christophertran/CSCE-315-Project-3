@@ -1,6 +1,7 @@
 const { database } = require('./apis/database');
 const { news } = require('./apis/news');
 const { currents } = require('./apis/currents');
+const { twitter } = require('./apis/twitter');
 
 class backend {
     static k_title = 'title';
@@ -14,6 +15,7 @@ class backend {
         this.database = new database();
         this.news = new news();
         this.currents = new currents();
+        this.twitter = new twitter();
     }
 
     async getNamesFromDatabase() {
@@ -106,6 +108,18 @@ class backend {
         }
 
         return ret;
+    }
+
+    async getUserTwitterInformationByName(_name) {
+        return await this.twitter.getUserInformationByName(_name);
+    }
+
+    async getUserTwitterIDByName(_name) {
+        return await this.twitter.getUserIDByName(_name);
+    }
+
+    async getUserTwitterScreenNameByName(_name) {
+        return await this.twitter.getUserScreenNameByName(_name);
     }
 
     disconnect() {

@@ -1,7 +1,7 @@
 const { backend } = require('./backend');
 
 async function test() {
-    var bk = new backend();
+    const bk = new backend();
 
     // console.log(await bk.getNamesFromDatabase());
     // console.log(await bk.getInformationFromDatabaseByName('richard shelby'));
@@ -10,6 +10,9 @@ async function test() {
     // console.log(await bk.getArticlesFromNewsByName('biden', 1));
     // console.log(await bk.getArticlesFromCurrentsByName('biden', 1));
     // console.log(await bk.getArticlesByName('biden', 5));
+    // console.log(await bk.getUserTwitterInformationByName('joe biden'));
+    // console.log(await bk.getUserTwitterScreenNameByName('richard shelby'));
+    // console.log(await bk.getUserTwitterIDByName('richard shelby'));
 
     bk.disconnect();
 };
