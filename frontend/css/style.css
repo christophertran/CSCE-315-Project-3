@@ -79,6 +79,7 @@ input[type="Search" i]::placeholder {
   
 /* The navigation menu links */
 .sidenav a {
+	display: block;
 	padding: 20px 8px 20px 8px;
 	text-decoration: none;
 	font-size: 14px;
@@ -89,10 +90,14 @@ input[type="Search" i]::placeholder {
 
 .sidenav ul {
 	border-top: solid 1px #353535;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 .sidenav li {
 	border-bottom: solid 1px #353535;
+	
 }
   
 /* When you mouse over the navigation links, change their color */
