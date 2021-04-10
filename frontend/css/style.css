@@ -13,8 +13,10 @@ body {
 }
 
 .navbar-brand img {
-	width: 3rem;
-	height: 3rem;
+	width: 3.5rem;
+	height: auto;
+	position: relative;
+	top: -2px;
 }
 
 input[type="Search" i]::placeholder {
@@ -28,14 +30,6 @@ input[type="Search" i]::placeholder {
 
 .round-button {
 	border-radius: 1.5rem;
-}
-
-.logo-image {
-	position: relative;
-	width: 40px;
-	height: auto;
-	top: -2px;
-	left: 3px;
 }
 
 #goUpBtn {
