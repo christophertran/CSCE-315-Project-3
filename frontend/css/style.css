@@ -44,3 +44,51 @@ input[type="Search" i]::placeholder {
 	right: 20px;
 	z-index: 99;
 }
+
+/* The sidebar menu */
+.sidenav {
+	height: 100%; /* Full-height: remove this if you want "auto" height */
+	width: 160px; /* Set the width of the sidebar */
+	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+	z-index: 1; /* Stay on top */
+	top: 80px; /* Stay at the top */
+	left: 0;
+	background-color: #111; /* Black */
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+  
+/* The navigation menu links */
+.sidenav a {
+	display: block;
+	padding: 20px 8px 20px 8px;
+	text-decoration: none;
+	font-size: 14px;
+	color: white;
+	display: block;
+	/*margin: 5px 5px 5px 5px;*/
+}
+
+.sidenav ul {
+	border-top: solid 1px #353535;
+	list-style-type: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.sidenav li {
+	border-bottom: solid 1px #353535;
+	
+}
+  
+/* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+	background-color: rgb(68, 67, 67);
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
