@@ -1,9 +1,9 @@
-const { database } = require('./apis/database');
-const { news } = require('./apis/news');
-const { currents } = require('./apis/currents');
-const { twitter } = require('./apis/twitter');
+const database = require('./apis/database');
+const news = require('./apis/news');
+const currents = require('./apis/currents');
+const twitter = require('./apis/twitter');
 
-class backend {
+module.exports = class backend {
     static k_title = 'title';
     static k_description = 'description';
     static k_url = 'url';
@@ -126,5 +126,3 @@ class backend {
         this.database.disconnect();
     }
 }
-
-exports.backend = backend;

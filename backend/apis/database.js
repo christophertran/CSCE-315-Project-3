@@ -1,7 +1,7 @@
 const DATABASE_INFO = require('../misc/database_info.json');
 const mysql = require("mysql");
 
-class database {
+module.exports = class database {
     constructor() {
         this.connection = mysql.createConnection({
             host: DATABASE_INFO.RDS_HOSTNAME,
@@ -58,5 +58,3 @@ class database {
         }
     }
 }
-
-exports.database = database;

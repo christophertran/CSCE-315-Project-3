@@ -1,7 +1,7 @@
 const API_INFO = require('../misc/api_info.json');
 const CurrentsAPI = require('currentsapi');
 
-class currents {
+module.exports = class currents {
     static k_id = 'id';
     static k_title = 'title';
     static k_description = 'description';
@@ -34,5 +34,3 @@ class currents {
         })
     }
 }
-
-exports.currents = currents;

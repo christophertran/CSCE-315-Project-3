@@ -1,7 +1,7 @@
 const API_INFO = require('../misc/api_info.json');
 const NewsAPI = require('newsapi');
 
-class news {
+module.exports = class news {
     static k_source = 'source';
     static k_source_id = 'id';
     static k_source_name = 'name';
@@ -35,5 +35,3 @@ class news {
         });
     }
 }
-
-exports.news = news;

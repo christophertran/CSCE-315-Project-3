@@ -1,7 +1,7 @@
 const API_INFO = require('../misc/api_info.json');
 const TwitterAPI = require('twitter-api-client');
 
-class twitter {
+module.exports = class twitter {
     static k_id = 'id';
     static k_name = 'name';
     static k_screen_name = 'screen_name';
@@ -42,5 +42,3 @@ class twitter {
         return data[0][twitter.k_screen_name];
     }
 }
-
-exports.twitter = twitter;
