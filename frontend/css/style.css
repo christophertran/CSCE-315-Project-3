@@ -100,3 +100,32 @@ input[type="Search" i]::placeholder {
 	display: flex;
 	justify-content: center;
 }
+
+/* unvisited link */
+a.article-text:link {
+    color:inherit;
+	text-decoration:none;
+}
+
+/* visited link */
+a.article-text:visited {
+	color:rgb(95, 0, 95);
+    text-decoration:none;
+}
+
+a.article-text:visited:hover {
+	color:rgb(95, 0, 95);
+    text-decoration:none;
+}
+
+/* mouse over link */
+a.article-text:hover {
+	color:inherit;
+    text-decoration:underline;
+}
+
+/* selected link */
+a.article-text:active {
+	color:inherit;
+    text-decoration:underline;
+}
