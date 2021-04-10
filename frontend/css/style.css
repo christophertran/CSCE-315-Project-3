@@ -39,25 +39,8 @@ input[type="Search" i]::placeholder {
 }
 
 #goUpBtn {
-	display: none;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
 	z-index: 99;
-	font-size: 18px;
-	background-color: Transparent;
-	background-repeat: no-repeat;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
-}
-
-.goUpIcon {
-	color: green;
-}
-
-
-#goUpBtn i:hover {
-	color: greenyellow;
 }
