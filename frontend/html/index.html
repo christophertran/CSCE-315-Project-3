@@ -38,14 +38,16 @@
 					PoliLime <img src="img/logo.png"/>
 				</a>
 
-				<form class="d-flex">
-					<input
-						class="form-control me-2 search-bar-edge"
-						type="search"
-						placeholder="Politician or State"
-						aria-label="Search"
-						id="search-box"
-					/>
+				<form class="d-flex" autocomplete="off">
+					<div class="autocomplete">  
+						<input
+							class="form-control me-2 search-bar-edge"
+							type="text"
+							placeholder="Politician or State"
+							aria-label="Search"
+							id="myInput"
+						/>
+					</div>	
 					<button
 						class="btn btn-outline-success round-button"
 						type="submit"
@@ -55,6 +57,8 @@
 				</form>
 			</div>
 		</nav>
+		<script src="autocomp.js"></script>
+
 		<!--
 		<h1 class="animate__animated animate__bounce">
 			<i class="fas fa-5x fa-cog"></i>
