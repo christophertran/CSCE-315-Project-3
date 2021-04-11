@@ -34,6 +34,7 @@ input[type="Search" i]::placeholder {
 
 .round-button {
 	border-radius: 1.5rem;
+	margin-left: 10px;
 }
 
 #goUpBtn {
@@ -44,21 +45,30 @@ input[type="Search" i]::placeholder {
 }
 
 /* The sidebar menu */
+
 .sidenav {
-	height: 100%; /* Full-height: remove this if you want "auto" height */
-	width: 160px; /* Set the width of the sidebar */
-	position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-	z-index: 1; /* Stay on top */
-	top: 80px; /* Stay at the top */
+	height: 100%;
+	/* Full-height: remove this if you want "auto" height */
+	width: 160px;
+	/* Set the width of the sidebar */
+	position: fixed;
+	/* Fixed Sidebar (stay in place on scroll) */
+	z-index: 1;
+	/* Stay on top */
+	top: 80px;
+	/* Stay at the top */
 	left: 0;
-	background-color: #111; /* Black */
-	overflow-x: hidden; /* Disable horizontal scroll */
+	background-color: #212529;
+	/* Same Color as Navigation Bar */
+	overflow-x: hidden;
+	/* Disable horizontal scroll */
 	padding-top: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
-  
+
 /* The navigation menu links */
+
 .sidenav a {
 	display: block;
 	padding: 20px 8px 20px 8px;
@@ -78,81 +88,94 @@ input[type="Search" i]::placeholder {
 
 .sidenav li {
 	border-bottom: solid 1px #353535;
-	
 }
-  
+
 /* When you mouse over the navigation links, change their color */
+
 .sidenav a:hover {
 	background-color: rgb(68, 67, 67);
 }
 
 @media screen and (max-height: 450px) {
-	.sidenav {padding-top: 15px;}
-	.sidenav a {font-size: 18px;}
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
 }
 
 .card {
-	margin: 0 auto; /* Added */
-	float: none; /* Added */
-	margin-bottom: 10px; /* Added */
+	margin: 0 auto;
+	/* Added */
+	float: none;
+	/* Added */
+	margin-bottom: 10px;
+	/* Added */
 }
+
 .container {
 	display: flex;
 	justify-content: center;
 }
 
 /* unvisited link */
+
 a.article-text:link {
-    color:inherit;
-	text-decoration:none;
+	color: inherit;
+	text-decoration: none;
 }
 
 /* visited link */
+
 a.article-text:visited {
-	color:rgb(95, 0, 95);
-    text-decoration:none;
+	color: rgb(95, 0, 95);
+	text-decoration: none;
 }
 
 a.article-text:visited:hover {
-	color:rgb(95, 0, 95);
-    text-decoration:none;
+	color: rgb(95, 0, 95);
+	text-decoration: none;
 }
 
 /* mouse over link */
+
 a.article-text:hover {
-	color:inherit;
-    text-decoration:underline;
+	color: inherit;
+	text-decoration: underline;
 }
 
 /* selected link */
+
 a.article-text:active {
-	color:inherit;
-    text-decoration:underline;
+	color: inherit;
+	text-decoration: underline;
 }
+
 .autocomplete {
 	position: relative;
 	display: inline-block;
-	}
+}
 
-	input {
+input {
 	border: 1px solid transparent;
 	background-color: #f1f1f1;
 	padding: 10px;
 	font-size: 16px;
-	}
+}
 
-	input[type=text] {
+input[type=text] {
 	background-color: #f1f1f1;
 	width: 100%;
-	}
+}
 
-	input[type=submit] {
+input[type=submit] {
 	background-color: DodgerBlue;
 	color: #fff;
 	cursor: pointer;
-	}
+}
 
-	.autocomplete-items {
+.autocomplete-items {
 	position: absolute;
 	border: 1px solid #d4d4d4;
 	border-bottom: none;
@@ -162,22 +185,24 @@ a.article-text:active {
 	top: 100%;
 	left: 0;
 	right: 0;
-	}
+}
 
-	.autocomplete-items div {
+.autocomplete-items div {
 	padding: 10px;
 	cursor: pointer;
-	background-color: #fff; 
-	border-bottom: 1px solid #d4d4d4; 
-	}
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+}
 
-	/*when hovering an item:*/
-	.autocomplete-items div:hover {
-	background-color: #e9e9e9; 
-	}
+/*when hovering an item:*/
 
-	/*when navigating through the items using the arrow keys:*/
-	.autocomplete-active {
-	background-color: DodgerBlue !important; 
-	color: #ffffff; 
-	}
+.autocomplete-items div:hover {
+	background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+
+.autocomplete-active {
+	background-color: DodgerBlue !important;
+	color: #ffffff;
+}
