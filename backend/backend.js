@@ -12,13 +12,17 @@ module.exports = class backend {
     static k_published = 'published';
 
     constructor() {
-        this.database = new database();
-        this.news = new news();
-        this.currents = new currents();
-        this.twitter = new twitter();
+        this.database = null;
+        this.news = null;
+        this.currents = null;
+        this.twitter = null;
     }
 
     async getNamesFromDatabase() {
+        if (!this.database) {
+            this.database = new database();
+        }
+
         var query = 'SELECT name FROM politicians;';
         var results = await this.database.query(query);
 
@@ -33,7 +37,30 @@ module.exports = class backend {
         return ret;
     }
 
+    async getNamesFromDatabaseByName(_name) {
+        if (!this.database) {
+            this.database = new database();
+        }
+        
+        var query = 'SELECT name FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
+        var results = await this.database.query(query);
+
+        var ret = [];
+
+        if (results) {
+            results.forEach(element => {
+                ret.push(element['name']);
+            });
+        }
+
+        return ret;
+    }
+
     async getInformationFromDatabaseByName(_name) {
+        if (!this.database) {
+            this.database = new database();
+        }
+
         var query = 'SELECT * FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
 
         return await this.database.query(query).then((result) => {
@@ -45,6 +72,10 @@ module.exports = class backend {
     }
 
     async getNamesFromDatabaseByState(_state) {
+        if (!this.database) {
+            this.database = new database();
+        }
+
         var query = 'SELECT * FROM politicians WHERE state LIKE \'%' + _state.toLowerCase() + '%\';';
 
         return await this.database.query(query).then((result) => {
@@ -65,6 +96,10 @@ module.exports = class backend {
     }
 
     async getArticlesFromNewsByName(_name, _size) {
+        if (!this.news) {
+            this.news = new news();
+        }
+
         var results = await this.news.getArticles(_name, _size);
 
         var ret = [];
@@ -88,6 +123,10 @@ module.exports = class backend {
     }
 
     async getArticlesFromCurrentsByName(_name, _size) {
+        if (!this.currents) {
+            this.currents = new currents();
+        }
+
         var results = await this.currents.getArticles(_name, _size);
 
         var ret = [];
@@ -111,18 +150,33 @@ module.exports = class backend {
     }
 
     async getUserTwitterInformationByName(_name) {
+        if (!this.twitter) {
+            this.twitter = new twitter();
+        }
+
         return await this.twitter.getUserInformationByName(_name);
     }
 
     async getUserTwitterIDByName(_name) {
+        if (!this.twitter) {
+            this.twitter = new twitter();
+        }
+
         return await this.twitter.getUserIDByName(_name);
     }
 
     async getUserTwitterScreenNameByName(_name) {
+        if (!this.twitter) {
+            this.twitter = new twitter();
+        }
+
         return await this.twitter.getUserScreenNameByName(_name);
     }
 
     disconnect() {
-        this.database.disconnect();
+        if (this.database) {
+            this.database.disconnect();
+            this.database = null;
+        }
     }
 }
