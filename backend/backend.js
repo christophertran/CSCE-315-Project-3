@@ -87,8 +87,8 @@ module.exports = class backend {
     }
 
     async getArticlesByName(_name, _size) {
-        var news = await this.getArticlesFromNewsByName('biden', Math.ceil(_size / 2));
-        var currents = await this.getArticlesFromCurrentsByName('biden', Math.floor(_size / 2));
+        var news = await this.getArticlesFromNewsByName(_name, Math.ceil(_size / 2));
+        var currents = await this.getArticlesFromCurrentsByName(_name, Math.floor(_size / 2));
 
         var articles = news.concat(currents);
 
