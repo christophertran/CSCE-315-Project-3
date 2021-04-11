@@ -1,5 +1,8 @@
 function search_test() {
-    clearList();
+    var input = document.getElementById('myInput');
+	input = input.toLowerCase();
+	
+	clearList();
     addItem({
         title: 'Biden’s new Supreme Court commission is a win for the Federalist Society - Vox.com',
         author: 'Ian Millhiser',
