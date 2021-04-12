@@ -5,8 +5,8 @@ const backend = require('../backend/backend');
 const bk = new backend();
 
 router.get('/:name', (req, res) => {
-    bk.getArticlesByName(req.params.name, 20).then((articles) => {
-        res.json(articles);
+    bk.getUserTwitterIDByName(req.params.name).then((twitterHandle) => {
+        res.json(twitterHandle);
     }).catch((error) => {
         console.error(error);
     });
