@@ -7,21 +7,19 @@ function search() {
 
     input = input.toLowerCase();
 
-	// clear what's already on the page to get ready for new articles to be put in
+    // clear what's already on the page to get ready for new articles to be put in
     clearList();
-	// put in new news articles taken from the back end
+    // put in new news articles taken from the back end
     axios.get("/search/" + input).then((res) => {
         addFeed(res.data);
     });
 
-	// display twitter feed of said person
-	axios.get("/twitter-feed/" + input).then((res) => {
-        var twitter = document.getElementById("twitter-feed");
-		twitter.setAttribute('src', "https://twitter.com/" + res.data);
-		twitter.innerText = input.split(' ').map((word) => {
-			return word[0].toUpperCase() + word.substring(1);
-		  }).join(' ');
-    });
+    // display twitter feed of said person
+    // axios.get("/twitter-feed/" + input).then((res) => {
+    //     var twitter = document.getElementsByClassName("twitter-timeline")[0];
+    //     twitter.href = "https://twitter.com/" + res.data;
+    //     twitter.innerText = res.data;
+    // });
 }
 
 function clearList() {
@@ -32,36 +30,36 @@ function clearList() {
 function addItem(articleInfo) {
     // get information form the html about the current list and the what the user inputted in the text box
     var ul = document.getElementById("dynamic-list");
-	ul.setAttribute('class', "card-list hidden");
-	ul.setAttribute('style', "text-align:left;");
+    ul.setAttribute('class', "card-list hidden");
+    ul.setAttribute('style', "text-align:left;");
     var candidate = document.getElementById("myInput");
 
     // create a new list element to be put populated with information from the candidate
     var li = document.createElement("li");
 
-	// create a div that will act as the card for the list item
+    // create a div that will act as the card for the list item
     var cardBodyDiv = document.createElement("div");
-	cardBodyDiv.setAttribute('class', "card mb-3");
-	cardBodyDiv.setAttribute('style', "max-width: 1000px; min-width:300px");
-    
-	// set class of div for the row g-0 divider
-	var rowDiv = document.createElement("div");
-    rowDiv.setAttribute('class', "row g-0"); 
+    cardBodyDiv.setAttribute('class', "card mb-3");
+    cardBodyDiv.setAttribute('style', "max-width: 1000px; min-width:300px");
 
-	// set class of div for the image
-	var imageColumnDiv = document.createElement("div");
-    imageColumnDiv.setAttribute('class', "col-md-4"); 
-	//img
+    // set class of div for the row g-0 divider
+    var rowDiv = document.createElement("div");
+    rowDiv.setAttribute('class', "row g-0");
+
+    // set class of div for the image
+    var imageColumnDiv = document.createElement("div");
+    imageColumnDiv.setAttribute('class', "col-md-4");
+    //img
     var articleImage = document.createElement("img");
     articleImage.setAttribute('src', articleInfo.image);
     articleImage.setAttribute('style', "width: 100%; height:auto; display: inline-block; vertical-align: middle;");
     //articleImage.appendChild(articleImageContent); // add the text node to the newly created h5
 
-	// set class of div for the text
-	var textColumnDiv = document.createElement("div");
+    // set class of div for the text
+    var textColumnDiv = document.createElement("div");
     textColumnDiv.setAttribute('class', "col-md-8");
-	textColumnDiv.setAttribute('style', "padding-left: 5px");
-    
+    textColumnDiv.setAttribute('style', "padding-left: 5px");
+
     // text wrap
     var textDiv = document.createElement("div");
     textDiv.setAttribute('class', "card-body"); // set class of the top div
@@ -85,22 +83,22 @@ function addItem(articleInfo) {
     linker.setAttribute('target', "_blank");
     li.setAttribute('id', candidate.value); // set id of this list item to be the searched value
 
-	// add text into text div (textDiv)
-	textDiv.appendChild(articleTitle);
-	textDiv.appendChild(blurb);
+    // add text into text div (textDiv)
+    textDiv.appendChild(articleTitle);
+    textDiv.appendChild(blurb);
 
-	// add top div into whole text column
-	textColumnDiv.appendChild(textDiv);
+    // add top div into whole text column
+    textColumnDiv.appendChild(textDiv);
 
-	// add image to its corresponding column
-	imageColumnDiv.appendChild(articleImage)
+    // add image to its corresponding column
+    imageColumnDiv.appendChild(articleImage)
 
-	// add image and text columns to row div
-	rowDiv.appendChild(imageColumnDiv);
-	rowDiv.appendChild(textColumnDiv);
+    // add image and text columns to row div
+    rowDiv.appendChild(imageColumnDiv);
+    rowDiv.appendChild(textColumnDiv);
 
-	// have the card body add everything in the row
-	cardBodyDiv.appendChild(rowDiv);
+    // have the card body add everything in the row
+    cardBodyDiv.appendChild(rowDiv);
 
     // cardBodyDiv.appendChild(articleTitle);
     // cardBodyDiv.appendChild(blurb);
@@ -110,11 +108,11 @@ function addItem(articleInfo) {
     // rowDiv.appendChild(textColumnDiv);
     // topDiv.appendChild(rowDiv);
 
-	// add the link to the card div
+    // add the link to the card div
     linker.appendChild(cardBodyDiv);
-	// add everything as a list item
+    // add everything as a list item
     li.appendChild(linker);
-	// add list item as a child of the current unordered list
+    // add list item as a child of the current unordered list
     ul.appendChild(li);
 }
 

@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(indexRoutes);
 app.use("/autocomplete", autocompleteRoutes);
 app.use("/search", searchRoutes);
-app.use("twitter-feed", twitterRoutes);
+app.use("/twitter-feed", twitterRoutes);
 
 app.listen(process.env.PORT || 3000, process.env.IP, () => {
     console.log('PoliLime has been served.');
