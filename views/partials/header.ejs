@@ -28,16 +28,16 @@
     <!-- Min height set to test scrolling... will be removed when content is added-->
     <nav class="navbar navbar-dark fixed-top bg-dark">
         <div style="height: 80px" class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 PoliLime <img src="/img/logo.png" />
             </a>
 
-            <form class="d-flex" autocomplete="off">
+            <form class="d-flex" autocomplete="off" action="/search" method="GET">
                 <div class="autocomplete">
-                    <input class="form-control me-2 search-bar-edge" type="text" placeholder="Politician or State"
+                    <input name="politicianName" class="form-control me-2 search-bar-edge" type="text" placeholder="Politician or State"
                         aria-label="Search" id="myInput" />
                 </div>
-                <button class="btn btn-outline-success round-button" type="button" onclick="search()">
+                <button class="btn btn-outline-success round-button" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
@@ -52,16 +52,16 @@
     <div class="col-2 col-md-1 col-sm-1 sidenav">
         <ul style="text-align:left;">
             <li class="sidenav-item">
-                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="/"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="sidenav-item">
-                <a href="#"><i class="fas fa-lemon"></i> About PoliLime</a>
+                <a href="/about"><i class="fas fa-lemon"></i> About PoliLime</a>
             </li>
             <li class="sidenav-item">
-                <a href="#"><i class="fas fa-address-card"></i> Contact Us</a>
+                <a href="/"><i class="fas fa-address-card"></i> Contact Us</a>
             </li>
             <li class="sidenav-item">
-                <a href="#"><i class="fas fa-question"></i> FAQs</a>
+                <a href="/"><i class="fas fa-question"></i> FAQs</a>
             </li>
         </ul>
     </div>

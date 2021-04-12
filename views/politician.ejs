@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <ul id="dynamic-list" class="card-list hidden" style="text-align:left;">
+                    <% articles.forEach((article)=> { %>
+                        <li>
+                            <div class="card">
+                                <img src="<%= article.image %> " class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a class="article-text" href="<%= article.url %> " target="_blank">
+                                        <h5 class="card-title">
+                                            <%= article.title %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= article.description %>
+                                            <br><br>
+                                            <%= article.url %> 
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <%= new Date(article.published).toDateString() %>
+                                </div>
+                            </div>
+                        </li>
+                        <% }) %>
+                </ul>
+            </div>
+
+            <div class="col-4">
+                <a class="twitter-timeline" href="https://twitter.com/<%= screenName %> ">Tweets by <%= screenName %>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<%- include("partials/footer.ejs") %>
