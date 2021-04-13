@@ -16,6 +16,15 @@
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/206051e64a.js" crossorigin="anonymous"></script>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Scripts needed by US Map -->
+    <script src="/scripts/usmap/jquery.color.js"></script>
+    <script src="/scripts/usmap/raphael.js"></script>
+    <script src="/scripts/usmap/jquery.usmap.js"></script>
+
     <!-- Animation CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -34,8 +43,8 @@
 
             <form class="d-flex" autocomplete="off" action="/search" method="GET">
                 <div class="autocomplete">
-                    <input name="politicianName" class="form-control me-2 search-bar-edge" type="text" placeholder="Politician or State"
-                        aria-label="Search" id="myInput" />
+                    <input name="politicianName" class="form-control me-2 search-bar-edge" type="text"
+                        placeholder="Politician or State" aria-label="Search" id="myInput" />
                 </div>
                 <button class="btn btn-outline-success round-button" type="submit">
                     <i class="fas fa-search"></i>
