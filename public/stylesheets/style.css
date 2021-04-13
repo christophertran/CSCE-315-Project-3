@@ -135,26 +135,31 @@ a.article-text:link {
 
 /* visited link */
 
-a.article-text:visited {
+a.article-text:visited h5{
+	color: #82478C;
+	text-decoration: none;
+}
+
+a.article-text:visited p{
 	color: black;
 	text-decoration: none;
 }
 
-a.article-text:visited:hover {
-	color: black;
+a.article-text:visited:hover h5{
+	color: #82478C;
 	text-decoration: none;
 }
 
 /* mouse over link */
 
-a.article-text:hover {
+a.article-text:hover h5{
 	color: inherit;
 	text-decoration: underline;
 }
 
 /* selected link */
 
-a.article-text:active {
+a.article-text:active h5{
 	color: inherit;
 	text-decoration: underline;
 }
