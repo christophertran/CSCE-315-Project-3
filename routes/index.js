@@ -22,15 +22,23 @@ router.get('/autocomplete', (req, res) => {
 });
 
 router.get('/search', (req, res) => {
-    bk.getUserTwitterScreenNameByName(req.query.politicianName.toLowerCase()).then((screenName) => {
-        bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
-            res.render("politician", { articles: articles, screenName: screenName });
-        }).catch((error) => {
-            console.error(error);
-        });
-    }).catch((error) => {
-        console.error(error);
-    });
+    bk.getInformationFromDatabaseByName(req.query.politicianName.toLowerCase()).then((info) => {
+		if (info.length != 0) {
+			bk.getUserTwitterScreenNameByName(req.query.politicianName.toLowerCase()).then((screenName) => {
+				bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
+					res.render("politician", { articles: articles, screenName: screenName, searchInput: req.query.politicianName });
+				}).catch((error) => {
+					console.error(error);
+				});
+			}).catch((error) => {
+				console.error(error);
+			});
+		} else {
+			res.render("politician_dne", { searchInput: req.query.politicianName });
+		}
+	}).catch((error) => {
+		console.error(error);
+	});
 });
 
 router.get('/state/:stateAbbrev', (req, res) => {
