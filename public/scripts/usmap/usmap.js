@@ -11,17 +11,23 @@ $(document).ready(function () {
 
         'click': function (event, data) {
             axios.get("/state/" + data.name).then((result) => {
-                var out = '';
-                result.data.forEach(element => {
-                    out += ' | ' + element.name.toUpperCase();
-                });
-                out += ' | ';
+                var ul = document.getElementById('politician-list');
 
-                $('#alert')
-                .text(out)
-                .stop()
-                .css('backgroundColor', 'yellow')
-                .animate({ backgroundColor: '#ddd' }, 1000);
+                ul.innerHTML = '';
+
+                result.data.forEach((element) => {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+
+                    var firstName = element.name.split(' ')[0].toLowerCase();
+                    var lastName = element.name.split(' ')[1].toLowerCase();
+
+                    a.setAttribute('href', '/search?politicianName=' + firstName + '+' + lastName);
+                    a.text = element.name.toUpperCase();
+
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
             }).catch((error) => {
                 console.log(error);
             });
