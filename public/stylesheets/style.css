@@ -232,3 +232,48 @@ input[type=submit] {
 	justify-content: center;
 	text-align: center;
 }
+
+.alert {
+	text-align: center;
+}
+
+#politician-list {
+
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	text-align: center;
+}
+
+#senatorTitle {
+	opacity: 0.0;
+}
+
+.btn-politian {
+	margin: 0 0 10px 0;
+}
+
+.nameLink {
+	font-weight: bold;
+}
+
+.nameLink:link {
+	text-decoration: none;
+	color:inherit;
+}
+
+.nameLink:visited {
+	text-decoration: none;
+	color:inherit;
+}
+
+.nameLink:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.nameLink:active {
+	text-decoration: none;
+	color: white;
+}
