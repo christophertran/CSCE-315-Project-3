@@ -1,101 +1,101 @@
-﻿name,gender,age,title,state,affiliation
-richard shelby,male,86,senator,alabama,republican
-tommy tuberville,male,66,senator,alabama,republican
-lisa murkowski,female,63,senator,alaska,republican
-dan sullivan,male,56,senator,alaska,republican
-kyrsten sinema,female,44,senator,arizona,democrat
-mark kelly,male,57,senator,arizona,democrat
-john boozman,male,70,senator,arkansas,republican
-tom cotton,male,43,senator,arkansas,republican
-dianne feinstein,female,87,senator,california,democrat
-alex padilla,male,48,senator,california,democrat
-michael bennet,male,56,senator,colorado,democrat
-john hickenlooper,male,69,senator,colorado,democrat
-richard blumenthal,male,75,senator,connecticut,democrat
-chris murphy,male,47,senator,connecticut,democrat
-tom carper,male,74,senator,delaware,democrat
-chris coons,male,57,senator,delaware,democrat
-marco rubio,male,49,senator,florida,republican
-rick scott,male,68,senator,florida,republican
-jon ossoff,male,34,senator,georgia,democrat
-raphael warnock,male,51,senator,georgia,democrat
-brian schatz,male,48,senator,hawaii,democrat
-mazie hirono,female,73,senator,hawaii,democrat
-mike crapo,male,69,senator,idaho,republican
-jim risch,male,77,senator,idaho,republican
-dick durbin,male,76,senator,illinois,democrat
-tammy duckworth,female,53,senator,illinois,democrat
-todd young,male,48,senator,indiana,republican
-mike braun,male,67,senator,indiana,republican
-chuck grassley,male,87,senator,iowa,republican
-joni ernst,female,50,senator,iowa,republican
-jerry moran,male,66,senator,kansas,republican
-roger marshall,male,60,senator,kansas,republican
-mitch mcconnell,male,79,senator,kentucky,republican
-rand paul,male,58,senator,kentucky,republican
-bill cassidy,male,63,senator,louisiana,republican
-john kennedy,male,69,senator,louisiana,republican
-susan collins,female,68,senator,maine,republican
-angus king,male,76,senator,maine,independent
-ben cardin,male,77,senator,maryland,democrat
-chris van hollen,male,62,senator,maryland,democrat
-elizabeth warren,female,71,senator,massachusetts,democrat
-ed markey,male,74,senator,massachusetts,democrat
-debbie stabenow,female,70,senator,michigan,democrat
-gary peters,male,62,senator,michigan,democrat
-amy klobuchar,female,60,senator,minnesota,democrat
-tina smith,female,63,senator,minnesota,democrat
-roger wiker,male,69,senator,mississippi,republican
-cindy hyde-smith,female,61,senator,mississippi,republican
-roy blunt,male,71,senator,missouri,republican
-josh hawley,male,41,senator,missouri,republican
-john tester,male,64,senator,montana,democrat
-steve daines,male,58,senator,montana,democrat
-deb fischer,female,70,senator,nebraska,republican
-ben sasse,male,49,senator,nebraska,republican
-catherine cortez masto,female,57,senator,nevada,democrat
-jacky rosen,female,63,senator,nevada,democrat
-jeanne shaheen,female,74,senator,new hampshire,democrat
-maggie hassan,female,63,senator,new hampshire,democrat
-bob menedez,male,67,senator,new jersey,democrat
-cory booker,male,51,senator,new jersey,democrat
-martin heinrich,male,49,senator,new mexico,democrat
-ben ray lujan,male,48,senator,new mexico,democrat
-chuck schumer,male,70,senator,new york,democrat
-kirsten gillibrand,female,54,senator,new york,democrat
-richard burr,male,65,senator,north carolina,republican
-thom tillis,male,60,senator,north carolina,republican
-john hoeven,male,64,senator,north dakota,republican
-kevin cramer,male,60,senator,north dakota,republican
-sherrod brown,male,68,senator,ohio,democrat
-rob portman,male,65,senator,ohio,republican
-jim inhofe,male,86,senator,oklahoma,republican
-james lankford,male,53,senator,oklahoma,republican
-ron wyden,male,71,senator,oregon,democrat
-jeff merkley,male,64,senator,oregon,democrat
-bob casey jr.,male,60,senator,pennsylvania,democrat
-pat toomey,male,59,senator,pennsylvania,republican
-jack reed,male,71,senator,rhode island,democrat
-sheldon whitehouse,male,65,senator,rhode island,democrat
-lindsey graham,male,65,senator,south carolina,republican
-tim scott,male,55,senator,south carolina,republican
-john thune,male,60,senator,south dakota,republican
-mike rounds,male,66,senator,south dakota,republican
-marsha blackburn,female,68,senator,tennessee,republican
-bill hagerty,male,61,senator,tennessee,republican
-john cornyn,male,69,senator,texas,republican
-ted cruz,male,50,senator,texas,republican
-mike lee,male,49,senator,utah,republican
-mitt romney,male,74,senator,utah,republican
-patrick leahy,male,80,senator,vermont,republican
-bernie sanders,male,79,senator,vermont,independent
-mark warner,male,66,senator,virginia,democrat
-tim kaine,male,63,senator,virginia,democrat
-patty murray,female,70,senator,washington,democrat
-maria cantwell,female,62,senator,washington,democrat
-joe manchin,male,73,senator,west virginia,democrat
-shelley moore capito,female,67,senator,west virginia,republican
-ron johnson,male,65,senator,wisconsin,republican
-tammy baldwin,female,59,senator,wisconsin,democrat
-john barrasso,male,68,senator,wyoming,republican
-cynthia lummis,female,66,senator,wyoming,republican
+﻿name,gender,age,title,state,affiliation,imageurl
+richard shelby,male,86,senator,alabama,republican,https://upload.wikimedia.org/wikipedia/commons/c/c5/Richard_Shelby%2C_official_portrait%2C_112th_Congress_%28cropped%29.jpg
+tommy tuberville,male,66,senator,alabama,republican,https://upload.wikimedia.org/wikipedia/commons/7/7a/Tommy_Tuberville_117th_Congress_Portrait.jpg
+lisa murkowski,female,63,senator,alaska,republican,https://upload.wikimedia.org/wikipedia/commons/4/4b/Lisa_Murkowski_official_photo_%28cropped%29.jpg
+dan sullivan,male,56,senator,alaska,republican,https://upload.wikimedia.org/wikipedia/commons/0/0e/Senator_Dan_Sullivan_official_%28cropped%29.jpg
+kyrsten sinema,female,44,senator,arizona,democrat,https://upload.wikimedia.org/wikipedia/commons/c/c8/Kyrsten_Sinema_%28cropped%29.jpg
+mark kelly,male,57,senator,arizona,democrat,https://upload.wikimedia.org/wikipedia/commons/1/18/SenatorKellyOfficialPhoto_%28cropped2%29.jpg
+john boozman,male,70,senator,arkansas,republican,https://upload.wikimedia.org/wikipedia/commons/3/36/John_Boozman%2C_official_portrait%2C_112th_Congress_%28cropped%29.jpg
+tom cotton,male,43,senator,arkansas,republican,https://upload.wikimedia.org/wikipedia/commons/6/66/Tom_Cotton_official_Senate_photo_%28cropped%29.jpg
+dianne feinstein,female,87,senator,california,democrat,https://upload.wikimedia.org/wikipedia/commons/1/10/Dianne_Feinstein%2C_official_Senate_photo_2_%28cropped%29.jpg
+alex padilla,male,48,senator,california,democrat,https://upload.wikimedia.org/wikipedia/commons/e/ec/Alex_Padilla_117th_Congress_portrait_%28cropped%29.jpg
+michael bennet,male,56,senator,colorado,democrat,https://upload.wikimedia.org/wikipedia/commons/4/4d/Michael_Bennet_Official_Photo_%28cropped%29.jpg
+john hickenlooper,male,69,senator,colorado,democrat,https://upload.wikimedia.org/wikipedia/commons/d/db/John_Hickenlooper%2C_official_portrait%2C_117th_Congress_%28cropped%29.jpeg
+richard blumenthal,male,75,senator,connecticut,democrat,https://upload.wikimedia.org/wikipedia/commons/3/36/Richard_Blumenthal_Official_Portrait_%28cropped%29.jpg
+chris murphy,male,47,senator,connecticut,democrat,https://upload.wikimedia.org/wikipedia/commons/4/47/Chris_Murphy%2C_official_portrait%2C_113th_Congress_%28cropped%29.jpg
+tom carper,male,74,senator,delaware,democrat,https://upload.wikimedia.org/wikipedia/commons/8/8e/Tom_Carper%2C_official_portrait%2C_112th_Congress_%28cropped%29.jpg
+chris coons,male,57,senator,delaware,democrat,https://upload.wikimedia.org/wikipedia/commons/9/99/Chris_Coons%2C_official_portrait%2C_112th_Congress_%28cropped%29.jpg
+marco rubio,male,49,senator,florida,republican,https://upload.wikimedia.org/wikipedia/commons/c/c4/Senator_Rubio_official_portrait_%28cropped%29.jpg
+rick scott,male,68,senator,florida,republican,https://upload.wikimedia.org/wikipedia/commons/d/d7/Official_Portrait_of_Senator_Rick_Scott_%28cropped%29.jpg
+jon ossoff,male,34,senator,georgia,democrat,https://upload.wikimedia.org/wikipedia/commons/e/e9/Ossoff_Official.jpg
+raphael warnock,male,51,senator,georgia,democrat,https://upload.wikimedia.org/wikipedia/commons/1/15/Raphael_Warnock_official_photo_%28cropped%29.jpg
+brian schatz,male,48,senator,hawaii,democrat,https://upload.wikimedia.org/wikipedia/commons/4/4b/Brian_Schatz%2C_official_portrait%2C_113th_Congress_2_%28cropped%29.jpg
+mazie hirono,female,73,senator,hawaii,democrat,https://upload.wikimedia.org/wikipedia/commons/8/85/Mazie_Hirono%2C_official_portrait%2C_113th_Congress_%28cropped%29.jpg
+mike crapo,male,69,senator,idaho,republican,https://upload.wikimedia.org/wikipedia/commons/3/3d/Mike_Crapo_Official_Photo_110th_Congress_%28cropped%29.jpg
+jim risch,male,77,senator,idaho,republican,https://upload.wikimedia.org/wikipedia/commons/e/e5/Jim_Risch_official_portrait_%28cropped%29.jpg
+dick durbin,male,76,senator,illinois,democrat,https://upload.wikimedia.org/wikipedia/commons/2/29/Richard_Durbin_official_photo_%28cropped%29.jpg
+tammy duckworth,female,53,senator,illinois,democrat,https://upload.wikimedia.org/wikipedia/commons/c/cc/Tammy_Duckworth_115th_official_portrait_%28cropped%29.jpg
+todd young,male,48,senator,indiana,republican,https://upload.wikimedia.org/wikipedia/commons/0/0d/Senator_Todd_Young_official_portrait_%28cropped%29.jpg
+mike braun,male,67,senator,indiana,republican,https://upload.wikimedia.org/wikipedia/commons/7/70/Mike_Braun%2C_Official_Portrait%2C_116th_Congress_%28cropped%29.jpg
+chuck grassley,male,87,senator,iowa,republican,https://upload.wikimedia.org/wikipedia/commons/1/1c/Chuck_Grassley_official_photo_2017_%28cropped%29.jpg
+joni ernst,female,50,senator,iowa,republican,https://upload.wikimedia.org/wikipedia/commons/7/74/Joni_Ernst%2C_official_portrait%2C_116th_Congress_3.jpg
+jerry moran,male,66,senator,kansas,republican,https://upload.wikimedia.org/wikipedia/commons/d/d9/Jerry_Moran%2C_official_portrait%2C_112th_Congress_%28cropped%29.jpg
+roger marshall,male,60,senator,kansas,republican,https://upload.wikimedia.org/wikipedia/commons/1/1c/Roger_Marshall_117th_Congress_portrait_%28cropped%29.jpg
+mitch mcconnell,male,79,senator,kentucky,republican,https://upload.wikimedia.org/wikipedia/commons/b/bb/Mitch_McConnell_portrait_2016.jpg
+rand paul,male,58,senator,kentucky,republican,https://upload.wikimedia.org/wikipedia/commons/0/01/Rand_Paul%2C_official_portrait%2C_112th_Congress_alternate_%28cropped%29.jpg
+bill cassidy,male,63,senator,louisiana,republican,https://upload.wikimedia.org/wikipedia/commons/f/f6/Bill_Cassidy_official_Senate_photo_%28cropped%29.jpg
+john kennedy,male,69,senator,louisiana,republican,https://upload.wikimedia.org/wikipedia/commons/2/2f/John_Neely_Kennedy%2C_official_portrait%2C_115th_Congress.jpg
+susan collins,female,68,senator,maine,republican,https://upload.wikimedia.org/wikipedia/commons/a/aa/Susan_Collins_official_Senate_photo_%28cropped%29.jpg
+angus king,male,76,senator,maine,independent,https://upload.wikimedia.org/wikipedia/commons/e/e9/Angus_King%2C_official_portrait%2C_113th_Congress_%28cropped%29.jpg
+ben cardin,male,77,senator,maryland,democrat,https://upload.wikimedia.org/wikipedia/commons/e/e5/Ben_Cardin_official_Senate_portrait_%28cropped%29.jpg
+chris van hollen,male,62,senator,maryland,democrat,https://upload.wikimedia.org/wikipedia/commons/3/37/Chris_Van_Hollen_official_portrait_115th_Congress_%28cropped%29.jpg
+elizabeth warren,female,71,senator,massachusetts,democrat,https://upload.wikimedia.org/wikipedia/commons/8/82/Elizabeth_Warren%2C_official_portrait%2C_114th_Congress_%28cropped%29.jpg
+ed markey,male,74,senator,massachusetts,democrat,"https://en.wikipedia.org/wiki/File:Edward_Markey,_official_portrait,_114th_Congress_(cropped).jpg"
+debbie stabenow,female,70,senator,michigan,democrat,https://upload.wikimedia.org/wikipedia/commons/6/61/Debbie_Stabenow%2C_official_photo%2C_116th_Congress_%28cropped%29.jpg
+gary peters,male,62,senator,michigan,democrat,https://upload.wikimedia.org/wikipedia/commons/9/98/Gary_Peters_official_photo_115th_congress_%28cropped%29.jpg
+amy klobuchar,female,60,senator,minnesota,democrat,https://upload.wikimedia.org/wikipedia/commons/3/3b/Amy_Klobuchar%2C_official_portrait%2C_113th_Congress_%28cropped%29.jpg
+tina smith,female,63,senator,minnesota,democrat,https://upload.wikimedia.org/wikipedia/commons/f/f8/Tina_Smith%2C_official_portrait%2C_116th_congress_%28cropped%29.jpg
+roger wiker,male,69,senator,mississippi,republican,https://upload.wikimedia.org/wikipedia/commons/f/f9/Roger_F._Wicker_crop.jpg
+cindy hyde-smith,female,61,senator,mississippi,republican,https://upload.wikimedia.org/wikipedia/commons/a/a2/Cindy_Hyde-Smith_official_photo_%28cropped%29.jpg
+roy blunt,male,71,senator,missouri,republican,https://upload.wikimedia.org/wikipedia/commons/f/f9/Roger_F._Wicker_crop.jpg
+josh hawley,male,41,senator,missouri,republican,https://upload.wikimedia.org/wikipedia/commons/5/5b/Josh_Hawley%2C_official_portrait%2C_116th_congress_%28cropped%29.jpg
+john tester,male,64,senator,montana,democrat,https://upload.wikimedia.org/wikipedia/commons/b/b9/JonTester_%28cropped%29.jpg
+steve daines,male,58,senator,montana,democrat,https://upload.wikimedia.org/wikipedia/commons/b/b8/Steve_Daines%2C_Official_Portrait%2C_116th_Congress_%28cropped%29.jpg
+deb fischer,female,70,senator,nebraska,republican,https://upload.wikimedia.org/wikipedia/commons/0/0b/Deb_Fischer%2C_official_portrait%2C_115th_Congress_%28cropped%29.jpg
+ben sasse,male,49,senator,nebraska,republican,https://upload.wikimedia.org/wikipedia/commons/d/d3/Ben_Sasse_Official_photo_%28cropped%29.jpg
+catherine cortez masto,female,57,senator,nevada,democrat,https://upload.wikimedia.org/wikipedia/commons/e/e7/Catherine_Cortez_Masto_official_portrait_%28cropped%29.jpg
+jacky rosen,female,63,senator,nevada,democrat,https://upload.wikimedia.org/wikipedia/commons/2/28/Jacky_Rosen%2C_official_portrait%2C_116th_congress_%28cropped-1%29.jpg
+jeanne shaheen,female,74,senator,new hampshire,democrat,https://upload.wikimedia.org/wikipedia/commons/2/21/Jeanne_Shaheen%2C_official_Senate_photo_portrait%2C_2009_%28cropped%29.jpg
+maggie hassan,female,63,senator,new hampshire,democrat,https://upload.wikimedia.org/wikipedia/commons/a/ae/Maggie_Hassan%2C_official_portrait%2C_115th_Congress_%28cropped%29.jpg
+bob menedez,male,67,senator,new jersey,democrat,https://upload.wikimedia.org/wikipedia/commons/b/bb/Robert_Menendez_official_Senate_portrait_%28cropped%29.jpg
+cory booker,male,51,senator,new jersey,democrat,https://upload.wikimedia.org/wikipedia/commons/5/59/Cory_Booker%2C_official_portrait%2C_114th_Congress.jpg
+martin heinrich,male,49,senator,new mexico,democrat,https://upload.wikimedia.org/wikipedia/commons/6/6f/Heinrich_Official_Headshot_2019_%28cropped%29.jpg
+ben ray lujan,male,48,senator,new mexico,democrat,https://upload.wikimedia.org/wikipedia/commons/f/fa/Ben_Ray_Lujan%2C_117th_Congress_portrait_%28cropped%29.jpg
+chuck schumer,male,70,senator,new york,democrat,https://upload.wikimedia.org/wikipedia/commons/3/3b/Chuck_Schumer_official_photo_%28cropped%29.jpg
+kirsten gillibrand,female,54,senator,new york,democrat,https://upload.wikimedia.org/wikipedia/commons/1/14/Kirsten_Gillibrand%2C_official_photo%2C_116th_Congress_%28cropped%29.jpg
+richard burr,male,65,senator,north carolina,republican,https://upload.wikimedia.org/wikipedia/commons/b/b1/Richard_Burr_official_portrait_%28cropped%29.jpg
+thom tillis,male,60,senator,north carolina,republican,https://upload.wikimedia.org/wikipedia/commons/9/94/Thom_Tillis_Official_Photo_%28cropped%29.jpg
+john hoeven,male,64,senator,north dakota,republican,https://upload.wikimedia.org/wikipedia/commons/7/75/Hoeven_Official_Portrait_2014_%28cropped%29.JPG
+kevin cramer,male,60,senator,north dakota,republican,https://upload.wikimedia.org/wikipedia/commons/f/ff/Kevin_Cramer%2C_official_portrait%2C_116th_congress_%28cropped%29.jpg
+sherrod brown,male,68,senator,ohio,democrat,https://upload.wikimedia.org/wikipedia/commons/f/f6/Sherrod_Brown_official_photo_2009_2_%28cropped%29.jpg
+rob portman,male,65,senator,ohio,republican,https://upload.wikimedia.org/wikipedia/commons/6/63/Rob_Portman_official_portrait_%28cropped%29.jpg
+jim inhofe,male,86,senator,oklahoma,republican,https://upload.wikimedia.org/wikipedia/commons/4/48/Jim_Inhofe_official_portrait_%28cropped%29.jpg
+james lankford,male,53,senator,oklahoma,republican,https://upload.wikimedia.org/wikipedia/commons/4/48/Jim_Inhofe_official_portrait_%28cropped%29.jpg
+ron wyden,male,71,senator,oregon,democrat,https://upload.wikimedia.org/wikipedia/commons/c/c6/Ron_Wyden_official_photo_%28cropped%29.jpg
+jeff merkley,male,64,senator,oregon,democrat,https://upload.wikimedia.org/wikipedia/commons/e/ee/Jeff_Merkley%2C_115th_official_photo_%28cropped%29.jpg
+bob casey jr.,male,60,senator,pennsylvania,democrat,https://upload.wikimedia.org/wikipedia/commons/6/6d/Bob_Casey_Jr._official_photo_%28cropped%29.jpg
+pat toomey,male,59,senator,pennsylvania,republican,https://upload.wikimedia.org/wikipedia/commons/5/5d/Pat_Toomey_official_photo_%28cropped%29.jpg
+jack reed,male,71,senator,rhode island,democrat,https://upload.wikimedia.org/wikipedia/commons/1/14/Senator_Jack_Reed_official_photo_%28cropped%29.jpg
+sheldon whitehouse,male,65,senator,rhode island,democrat,https://upload.wikimedia.org/wikipedia/commons/b/bb/Sheldon_Whitehouse%2C_official_portrait%2C_116th_congress_%28cropped%29.jpg
+lindsey graham,male,65,senator,south carolina,republican,https://upload.wikimedia.org/wikipedia/commons/f/f1/Lindsey_Graham%2C_official_photo%2C_113th_Congress_%28cropped%29.jpg
+tim scott,male,55,senator,south carolina,republican,https://upload.wikimedia.org/wikipedia/commons/b/ba/Tim_Scott%2C_official_portrait%2C_113th_Congress_%28cropped_2%29.jpg
+john thune,male,60,senator,south dakota,republican,https://upload.wikimedia.org/wikipedia/commons/c/c5/John_Thune%2C_official_portrait%2C_111th_Congress_%28cropped%29.jpg
+mike rounds,male,66,senator,south dakota,republican,https://upload.wikimedia.org/wikipedia/commons/4/41/Mike_Rounds_official_Senate_portrait_%28cropped%29.jpg
+marsha blackburn,female,68,senator,tennessee,republican,https://upload.wikimedia.org/wikipedia/commons/0/05/Marsha_Blackburn%2C_official_photo%2C_116th_Congress_%28cropped%29.jpg
+bill hagerty,male,61,senator,tennessee,republican,https://upload.wikimedia.org/wikipedia/commons/3/3a/Sen._Bill_Hagerty_official_Senate_portrait%2C_117th_Congress_%28cropped%29.jpg
+john cornyn,male,69,senator,texas,republican,https://upload.wikimedia.org/wikipedia/commons/e/e4/John_Cornyn_%28cropped%29.jpg
+ted cruz,male,50,senator,texas,republican,https://upload.wikimedia.org/wikipedia/commons/9/94/Ted_Cruz_official_116th_portrait_%28cropped%29.jpg
+mike lee,male,49,senator,utah,republican,https://upload.wikimedia.org/wikipedia/commons/4/46/Mike_Lee%2C_official_portrait_%28cropped%29.jpg
+mitt romney,male,74,senator,utah,republican,https://upload.wikimedia.org/wikipedia/commons/f/f8/Mitt_Romney_official_US_Senate_portrait_%28cropped%29.jpg
+patrick leahy,male,80,senator,vermont,republican,https://upload.wikimedia.org/wikipedia/commons/4/46/Patrick_Leahy_official_photo_%28cropped%29.jpg
+bernie sanders,male,79,senator,vermont,independent,https://upload.wikimedia.org/wikipedia/commons/7/73/Bernie_Sanders_%28cropped%29.jpg
+mark warner,male,66,senator,virginia,democrat,https://upload.wikimedia.org/wikipedia/commons/5/5e/Mark_Warner_113th_Congress_photo_%28cropped%29.jpg
+tim kaine,male,63,senator,virginia,democrat,https://upload.wikimedia.org/wikipedia/commons/7/76/Tim_Kaine_116th_official_portrait_%28cropped%29.jpg
+patty murray,female,70,senator,washington,democrat,https://upload.wikimedia.org/wikipedia/commons/9/9d/Patty_Murray%2C_official_portrait%2C_113th_Congress_%28cropped%29.jpg
+maria cantwell,female,62,senator,washington,democrat,https://upload.wikimedia.org/wikipedia/commons/8/8f/Maria_Cantwell_%28cropped%29.jpg
+joe manchin,male,73,senator,west virginia,democrat,https://upload.wikimedia.org/wikipedia/commons/c/cc/Senator_Manchin_%28cropped%29.jpg
+shelley moore capito,female,67,senator,west virginia,republican,https://upload.wikimedia.org/wikipedia/commons/3/37/Shelley_Moore_Capito_official_Senate_photo_%28cropped_2%29.jpg
+ron johnson,male,65,senator,wisconsin,republican,https://upload.wikimedia.org/wikipedia/commons/0/0c/Ron_Johnson_portrait_117th_Congress_%28cropped%29.jpg
+tammy baldwin,female,59,senator,wisconsin,democrat,https://upload.wikimedia.org/wikipedia/commons/7/7d/Tammy_Baldwin%2C_official_portrait%2C_113th_Congress_%28cropped%29.jpg
+john barrasso,male,68,senator,wyoming,republican,https://upload.wikimedia.org/wikipedia/commons/4/42/John_Barrasso_official_portrait_112th_Congress_%28cropped%29.jpg
+cynthia lummis,female,66,senator,wyoming,republican,https://upload.wikimedia.org/wikipedia/commons/c/cb/Cynthia_Lummis_U.S._Senator_%28cropped%29.jpg
