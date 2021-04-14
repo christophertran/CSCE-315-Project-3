@@ -13,6 +13,8 @@ async function test() {
     // console.log(await bk.getUserTwitterInformationByName('joe biden'));
     // console.log(await bk.getUserTwitterScreenNameByName('richard shelby'));
     // console.log(await bk.getUserTwitterIDByName('richard shelby'));
+    // console.log(await bk.getCongressHouseMembers());
+    // console.log(await bk.getCongressSenateMembers());
 
     bk.disconnect();
 };

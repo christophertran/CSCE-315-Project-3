@@ -2,6 +2,8 @@ const database = require('./apis/database');
 const news = require('./apis/news');
 const currents = require('./apis/currents');
 const twitter = require('./apis/twitter');
+const congress = require('./apis/congress');
+const Congress = require('propublica-congress-node/src');
 
 module.exports = class backend {
     static k_title = 'title';
@@ -17,6 +19,7 @@ module.exports = class backend {
         this.news = null;
         this.currents = null;
         this.twitter = null;
+        this.congress = null;
     }
 
     async getNamesFromDatabase() {
@@ -186,6 +189,38 @@ module.exports = class backend {
         }
 
         return await this.twitter.getUserScreenNameByName(_name);
+    }
+
+    async getCongressSenateMembers(_congressNumber) {
+        if (!this.congress) {
+            this.congress = new congress();
+        }
+
+        return this.congress.getSenateMembers().then((members) => {
+            var temp = {};
+
+            members.forEach((member) => {
+                temp[member.first_name + ' ' + member.last_name] = member;
+            });
+
+            return temp;
+        });
+    }
+
+    async getCongressHouseMembers(_congressNumber) {
+        if (!this.congress) {
+            this.congress = new congress();
+        }
+
+        return this.congress.getHouseMembers().then((members) => {
+            var temp = {};
+
+            members.forEach((member) => {
+                temp[member.first_name + ' ' + member.last_name] = member;
+            });
+
+            return temp;
+        });
     }
 
     disconnect() {

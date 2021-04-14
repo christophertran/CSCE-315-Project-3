@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "newsapi": "^2.4.1",
+    "propublica-congress-node": "^0.1.2",
     "twitter-api-client": "^1.3.7"
   }
 }
