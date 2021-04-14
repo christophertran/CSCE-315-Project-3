@@ -42,6 +42,7 @@ module.exports = class backend {
             this.database = new database();
         }
         
+		// SQL command: SELECT name FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
         var query = 'SELECT name FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
         var results = await this.database.query(query);
 
@@ -61,6 +62,7 @@ module.exports = class backend {
             this.database = new database();
         }
 
+		// SQL command: SELECT * FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
         var query = 'SELECT * FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
 
         return await this.database.query(query).then((result) => {
@@ -76,7 +78,8 @@ module.exports = class backend {
             this.database = new database();
         }
 
-        var query = 'SELECT * FROM politicians WHERE state LIKE \'%' + _state.toLowerCase() + '%\';';
+		// SQL command: SELECT * FROM politicians WHERE state='state_name';
+        var query = 'SELECT * FROM politicians WHERE state=\'' + _state.toLowerCase() + '\';';
 
         return await this.database.query(query).then((result) => {
             return result;
