@@ -44,6 +44,7 @@ input[type="Search" i]::placeholder {
 	bottom: 20px;
 	right: 20px;
 	z-index: 99;
+	display: none;
 }
 
 .container {
@@ -221,4 +222,13 @@ input[type=submit] {
 
 .hidden {
 	list-style-type: none;
+}
+
+.about-container {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
