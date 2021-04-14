@@ -18,9 +18,10 @@ module.exports = class news {
     }
 
     async getArticles(_name, _size) {
-        return await this.newsapi.v2.topHeadlines({
+        return await this.newsapi.v2.everything({
             q: _name,
-            language: 'en'
+            language: 'en',
+            sortBy: 'relevancy'
         }).then(response => {
             var articles = response['articles'];
 

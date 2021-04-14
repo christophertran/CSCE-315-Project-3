@@ -19,7 +19,8 @@ module.exports = class currents {
     async getArticles(_name, _size) {
         return await this.currentsapi.search({
             keywords: _name,
-            language: 'en'
+            language: 'en',
+            country: 'us'
         }).then(response => {
             var news = response['news'];
 

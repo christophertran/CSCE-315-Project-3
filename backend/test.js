@@ -4,11 +4,11 @@ async function test() {
     const bk = new backend();
 
     // console.log(await bk.getNamesFromDatabase());
-    console.log(await bk.getInformationFromDatabaseByName('ricard'));
+    // console.log(await bk.getInformationFromDatabaseByName('ricard'));
     // console.log(await bk.getInformationFromDatabaseByName('billy mays'));
     // console.log(await bk.getNamesFromDatabaseByState('Texas'));
-    // console.log(await bk.getArticlesFromNewsByName('biden', 1));
-    // console.log(await bk.getArticlesFromCurrentsByName('biden', 1));
+    // console.log(await bk.getArticlesFromNewsByName('Joe Biden', 1));
+    // console.log(await bk.getArticlesFromCurrentsByName('Joe Biden', 1));
     // console.log(await bk.getArticlesByName('biden', 5));
     // console.log(await bk.getUserTwitterInformationByName('joe biden'));
     // console.log(await bk.getUserTwitterScreenNameByName('richard shelby'));

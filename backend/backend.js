@@ -10,6 +10,7 @@ module.exports = class backend {
     static k_author = 'author';
     static k_image_url = 'image';
     static k_published = 'published';
+    static k_api = 'api';
 
     constructor() {
         this.database = null;
@@ -93,7 +94,16 @@ module.exports = class backend {
         var news = await this.getArticlesFromNewsByName(_name, Math.ceil(_size / 2));
         var currents = await this.getArticlesFromCurrentsByName(_name, Math.floor(_size / 2));
 
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
         var articles = news.concat(currents);
+
+        shuffleArray(articles);
 
         return articles;
     }
@@ -117,6 +127,7 @@ module.exports = class backend {
                 temp[backend.k_url] = element[news.k_url];
                 temp[backend.k_image_url] = element[news.k_image_url];
                 temp[backend.k_published] = element[news.k_published];
+                temp[backend.k_api] = 'NewsAPI';
 
                 ret.push(temp);
             });
@@ -144,6 +155,7 @@ module.exports = class backend {
                 temp[backend.k_url] = element[currents.k_url];
                 temp[backend.k_image_url] = element[currents.k_image_url];
                 temp[backend.k_published] = element[currents.k_published];
+                temp[backend.k_api] = 'CurrentsAPI';
 
                 ret.push(temp);
             });
