@@ -12,7 +12,6 @@ module.exports = class currents {
             congressNumber: this.congressNumber,
             chamber: 'senate'
         }).then(function (res) {
-            console.log(res);
             return res.results[0].members;
         });
     }

@@ -3,7 +3,6 @@ const news = require('./apis/news');
 const currents = require('./apis/currents');
 const twitter = require('./apis/twitter');
 const congress = require('./apis/congress');
-const Congress = require('propublica-congress-node/src');
 
 module.exports = class backend {
     static k_title = 'title';
@@ -45,8 +44,8 @@ module.exports = class backend {
         if (!this.database) {
             this.database = new database();
         }
-        
-		// SQL command: SELECT name FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
+
+        // SQL command: SELECT name FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
         var query = 'SELECT name FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
         var results = await this.database.query(query);
 
@@ -66,10 +65,26 @@ module.exports = class backend {
             this.database = new database();
         }
 
-		// SQL command: SELECT * FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
+        // SQL command: SELECT * FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
         var query = 'SELECT * FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
 
         return await this.database.query(query).then((result) => {
+
+            function capitalize(_word) {
+                return _word.split(' ').map((word) => {
+                    return word[0].toUpperCase() + word.substring(1);
+                }).join(' ');
+            }
+
+            result.forEach((res) => {
+                res.name = capitalize(String(res.name));
+                res.gender = capitalize(String(res.gender));
+                res.age = capitalize(String(res.age));
+                res.title = capitalize(String(res.title));
+                res.state = capitalize(String(res.state));
+                res.affiliation = capitalize(String(res.affiliation)); 
+            });
+
             return result;
         }).catch((error) => {
             console.error("Query error: " + error);
@@ -82,7 +97,7 @@ module.exports = class backend {
             this.database = new database();
         }
 
-		// SQL command: SELECT * FROM politicians WHERE state='state_name';
+        // SQL command: SELECT * FROM politicians WHERE state='state_name';
         var query = 'SELECT * FROM politicians WHERE state=\'' + _state.toLowerCase() + '\';';
 
         return await this.database.query(query).then((result) => {
