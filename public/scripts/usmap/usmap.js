@@ -22,12 +22,12 @@ $(document).ready(function () {
                     var btn = document.createElement('button');
                     var a = document.createElement('a');
 
-                    var firstName = element.name.split(' ')[0].toLowerCase();
-                    var lastName = element.name.split(' ')[1].toLowerCase();
+                    var firstName = element.split(' ')[0].toLowerCase();
+                    var lastName = element.split(' ')[1].toLowerCase();
 
                     a.setAttribute('href', '/search?politicianName=' + firstName + '+' + lastName);
                     a.setAttribute('class', 'nameLink');
-                    a.text = element.name.toUpperCase();
+                    a.text = element.toUpperCase();
 
                     btn.setAttribute('class', 'btn btn-outline-success btn-politian');
 

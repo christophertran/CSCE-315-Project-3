@@ -21,97 +21,7 @@ module.exports = class backend {
         this.congress = null;
     }
 
-    async getNamesFromDatabase() {
-        if (!this.database) {
-            this.database = new database();
-        }
-
-        var query = 'SELECT name FROM politicians;';
-        var results = await this.database.query(query);
-
-        var ret = [];
-
-        if (results) {
-            results.forEach(element => {
-                ret.push(element['name']);
-            });
-        }
-
-        return ret;
-    }
-
-    async getNamesFromDatabaseByName(_name) {
-        if (!this.database) {
-            this.database = new database();
-        }
-
-        // SQL command: SELECT name FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
-        var query = 'SELECT name FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
-        var results = await this.database.query(query);
-
-        var ret = [];
-
-        if (results) {
-            results.forEach(element => {
-                ret.push(element['name']);
-            });
-        }
-
-        return ret;
-    }
-
-    async getInformationFromDatabaseByName(_name) {
-        if (!this.database) {
-            this.database = new database();
-        }
-
-        // SQL command: SELECT * FROM politicians WHERE name LIKE '%search_name%'; // get anything with search_name as a substring
-        var query = 'SELECT * FROM politicians WHERE name LIKE \'%' + _name.toLowerCase() + '%\';';
-
-        return await this.database.query(query).then((result) => {
-
-            function capitalize(_word) {
-                return _word.split(' ').map((word) => {
-                    return word[0].toUpperCase() + word.substring(1);
-                }).join(' ');
-            }
-
-            result.forEach((res) => {
-                res.name = capitalize(String(res.name));
-                res.gender = capitalize(String(res.gender));
-                res.age = capitalize(String(res.age));
-                res.title = capitalize(String(res.title));
-                res.state = capitalize(String(res.state));
-                res.affiliation = capitalize(String(res.affiliation)); 
-            });
-
-            return result;
-        }).catch((error) => {
-            console.error("Query error: " + error);
-            return {};
-        });
-    }
-
-    async getNamesFromDatabaseByState(_state) {
-        if (!this.database) {
-            this.database = new database();
-        }
-
-        // SQL command: SELECT * FROM politicians WHERE state='state_name';
-        var query = 'SELECT * FROM politicians WHERE state=\'' + _state.toLowerCase() + '\';';
-
-        return await this.database.query(query).then((result) => {
-            return result;
-        }).catch((error) => {
-            console.error("Query error: " + error);
-            return {};
-        });
-    }
-
-    async getArticlesByName(_name, _size) {
-        var news = await this.getArticlesFromNewsByName(_name, Math.ceil(_size / 2));
-        var currents = await this.getArticlesFromCurrentsByName(_name, Math.floor(_size / 2));
-
+    getArticlesByName(_name, _size) {
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -119,94 +29,178 @@ module.exports = class backend {
             }
         }
 
-        var articles = news.concat(currents);
-
-        shuffleArray(articles);
-
-        return articles;
+        return this.getArticlesFromNewsByName(_name, Math.ceil(_size / 2)).then((news) => {
+            return this.getArticlesFromCurrentsByName(_name, Math.floor(_size / 2)).then((currents) => {
+                var articles = news.concat(currents);
+                shuffleArray(articles);
+                return articles;
+            });
+        });
     }
 
-    async getArticlesFromNewsByName(_name, _size) {
+    getArticlesFromNewsByName(_name, _size) {
         if (!this.news) {
             this.news = new news();
         }
 
-        var results = await this.news.getArticles(_name, _size);
+        return this.news.getArticles(_name, _size).then((results) => {
+            var ret = [];
 
-        var ret = [];
+            if (results) {
+                results.forEach(element => {
+                    var temp = {}
 
-        if (results) {
-            results.forEach(element => {
-                var temp = {}
+                    temp[backend.k_title] = element[news.k_title];
+                    temp[backend.k_author] = element[news.k_author];
+                    temp[backend.k_description] = element[news.k_description];
+                    temp[backend.k_url] = element[news.k_url];
+                    temp[backend.k_image_url] = element[news.k_image_url];
+                    temp[backend.k_published] = element[news.k_published];
+                    temp[backend.k_api] = 'NewsAPI';
 
-                temp[backend.k_title] = element[news.k_title];
-                temp[backend.k_author] = element[news.k_author];
-                temp[backend.k_description] = element[news.k_description];
-                temp[backend.k_url] = element[news.k_url];
-                temp[backend.k_image_url] = element[news.k_image_url];
-                temp[backend.k_published] = element[news.k_published];
-                temp[backend.k_api] = 'NewsAPI';
+                    ret.push(temp);
+                });
+            }
 
-                ret.push(temp);
-            });
-        }
-
-        return ret;
+            return ret;
+        });
     }
 
-    async getArticlesFromCurrentsByName(_name, _size) {
+    getArticlesFromCurrentsByName(_name, _size) {
         if (!this.currents) {
             this.currents = new currents();
         }
 
-        var results = await this.currents.getArticles(_name, _size);
+        return this.currents.getArticles(_name, _size).then((results) => {
+            var ret = [];
 
-        var ret = [];
+            if (results) {
+                results.forEach(element => {
+                    var temp = {}
 
-        if (results) {
-            results.forEach(element => {
-                var temp = {}
+                    temp[backend.k_title] = element[currents.k_title];
+                    temp[backend.k_author] = element[currents.k_author];
+                    temp[backend.k_description] = element[currents.k_description];
+                    temp[backend.k_url] = element[currents.k_url];
+                    temp[backend.k_image_url] = element[currents.k_image_url];
+                    temp[backend.k_published] = element[currents.k_published];
+                    temp[backend.k_api] = 'CurrentsAPI';
 
-                temp[backend.k_title] = element[currents.k_title];
-                temp[backend.k_author] = element[currents.k_author];
-                temp[backend.k_description] = element[currents.k_description];
-                temp[backend.k_url] = element[currents.k_url];
-                temp[backend.k_image_url] = element[currents.k_image_url];
-                temp[backend.k_published] = element[currents.k_published];
-                temp[backend.k_api] = 'CurrentsAPI';
+                    ret.push(temp);
+                });
+            }
 
-                ret.push(temp);
+            return ret;
+        });
+    }
+
+    getUserTwitterInformationByName(_name) {
+        if (!this.twitter) {
+            this.twitter = new twitter();
+        }
+
+        return this.twitter.getUserInformationByName(_name).then((results) => {
+            return results;
+        });
+    }
+
+    getCongressMembersNames() {
+        return this.getCongressSenateMembersNames().then((senate) => {
+            return this.getCongressHouseMembersNames().then((house) => {
+                return senate.concat(house);
             });
-        }
-
-        return ret;
+        });
     }
 
-    async getUserTwitterInformationByName(_name) {
-        if (!this.twitter) {
-            this.twitter = new twitter();
+    getCongressSenateMembersNames() {
+        if (!this.congress) {
+            this.congress = new congress();
         }
 
-        return await this.twitter.getUserInformationByName(_name);
+        return this.congress.getSenateMembers().then((members) => {
+            var temp = [];
+
+            members.forEach((member) => {
+                temp.push(member.first_name + ' ' + member.last_name);
+            });
+
+            return temp;
+        });
     }
 
-    async getUserTwitterIDByName(_name) {
-        if (!this.twitter) {
-            this.twitter = new twitter();
+    getCongressHouseMembersNames() {
+        if (!this.congress) {
+            this.congress = new congress();
         }
 
-        return await this.twitter.getUserIDByName(_name);
+        return this.congress.getHouseMembers().then((members) => {
+            var temp = [];
+
+            members.forEach((member) => {
+                temp.push(member.first_name + ' ' + member.last_name);
+            });
+
+            return temp;
+        });
     }
 
-    async getUserTwitterScreenNameByName(_name) {
-        if (!this.twitter) {
-            this.twitter = new twitter();
+    getCongressMembersByState(_state) {
+        return this.getCongressSenateMemberNamesByState(_state).then((senate) => {
+            return this.getCongressHouseMemberNamesByState(_state).then((house) => {
+                var temp = {};
+                temp['senate'] = senate;
+                temp['house'] = house;
+
+                return temp;
+            });
+        });
+    }
+
+    getCongressSenateMemberNamesByState(_state) {
+        if (!this.congress) {
+            this.congress = new congress();
         }
 
-        return await this.twitter.getUserScreenNameByName(_name);
+        return this.congress.getSenateMembers().then((members) => {
+            var temp = [];
+
+            members.forEach((member) => {
+                if (member.state == _state) {
+                    temp.push(member.first_name + ' ' + member.last_name);
+                }
+            });
+
+            return temp;
+        });
     }
 
-    async getCongressSenateMembers(_congressNumber) {
+    getCongressHouseMemberNamesByState() {
+        if (!this.congress) {
+            this.congress = new congress();
+        }
+
+        return this.congress.getHouseMembers().then((members) => {
+            var temp = [];
+
+            members.forEach((member) => {
+                if (member.state == _state) {
+                    temp.push(member.first_name + ' ' + member.last_name);
+                }
+            });
+
+            return temp;
+        });
+    }
+
+    getCongressMembers() {
+        return this.getCongressSenateMembers().then((senate) => {
+            return this.getCongressHouseMembers().then((house) => {
+                return senate.concat(house);
+            });
+        });
+    }
+
+    getCongressSenateMembers() {
         if (!this.congress) {
             this.congress = new congress();
         }
@@ -215,14 +209,17 @@ module.exports = class backend {
             var temp = {};
 
             members.forEach((member) => {
-                temp[member.first_name + ' ' + member.last_name] = member;
+                member.age = this.getAge(member.date_of_birth);
+                member.image_url = this.getPoliticianImageURL(member.id);
+                member.full_name = (member.first_name + ' ' + member.last_name);
+                temp[member.full_name.toLowerCase()] = member;
             });
 
             return temp;
         });
     }
 
-    async getCongressHouseMembers(_congressNumber) {
+    getCongressHouseMembers() {
         if (!this.congress) {
             this.congress = new congress();
         }
@@ -231,11 +228,29 @@ module.exports = class backend {
             var temp = {};
 
             members.forEach((member) => {
-                temp[member.first_name + ' ' + member.last_name] = member;
+                member.age = this.getAge(member.date_of_birth);
+                member.image_url = this.getPoliticianImageURL(member.id);
+                member.full_name = (member.first_name + ' ' + member.last_name);
+                temp[member.full_name.toLowerCase()] = member;
             });
 
             return temp;
         });
+    }
+
+    getAge(dateString) {
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    getPoliticianImageURL(_id) {
+        return `https://theunitedstates.io/images/congress/original/${_id}.jpg`;
     }
 
     disconnect() {

@@ -15,6 +15,8 @@ async function test() {
     // console.log(await bk.getUserTwitterIDByName('richard shelby'));
     // console.log(await bk.getCongressHouseMembers());
     // console.log(await bk.getCongressSenateMembers());
+    // console.log(await bk.getCongressSenateNames());
+    // console.log(await bk.getCongressHouseNames());
 
     bk.disconnect();
 };
