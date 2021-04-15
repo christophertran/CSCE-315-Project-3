@@ -2,7 +2,8 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-1"></div>
+			<div class="col-10">
 				<div class="card mb-3">
 					<div class="row g-0">
 						<div class="col-md-4">
@@ -26,16 +27,20 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-1"></div>
 		</div>
 		<div class="row" style="margin-bottom: 15px;">
-			<div class="col-12">
+			<div class="col-1"></div>
+			<div class="col-10">
 				<h6>
 					<strong>Search Result for "<%= searchInput %>":</strong>
 				</h6>
 			</div>
+			<div class="col-1"></div>
 		</div>
 		<div class="row">
-			<div class="col-7">
+			<div class="col-1"></div>
+			<div class="col-6">
 				<ul id="dynamic-list" class="card-list hidden" style="text-align:left;">
 					<% articles.forEach((article)=> { %>
 						<li>
@@ -62,9 +67,10 @@
 						<% }) %>
 				</ul>
 			</div>
-			<div class="col-5">
+			<div class="col-4">
 				<a class="twitter-timeline" data-theme="light" href="https://twitter.com/<%= screenName %> ">Tweets by <%= screenName %></a>
 			</div>
+			<div class="col-1"></div>
 		</div>
 	</div>
 
