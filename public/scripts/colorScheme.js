@@ -53,10 +53,11 @@ function toggleTheme() {
         pageColorScheme.setAttribute('href', "/stylesheets/dark.css");
         console.log(pageColorScheme.getAttribute('href'));
 
-        // set twitter theme
+        // set twitter theme 
         var twitter = document.getElementById('twitter-timeline');
-        twitter.setAttribute('data-theme', "dark");
-
+        if (twitter != null)
+            twitter.setAttribute('data-theme', "dark");
+        
         document.getElementById('slider').checked = true;
     } else {
         setTheme('theme-light');
@@ -70,8 +71,9 @@ function toggleTheme() {
 
         // set twitter theme
         var twitter = document.getElementById('twitter-timeline');
-        twitter.setAttribute('data-theme', "light");
-
+        if (twitter != null) {
+            twitter.setAttribute('data-theme', "light");
+        }
         document.getElementById('slider').checked = false;
     }
 })();

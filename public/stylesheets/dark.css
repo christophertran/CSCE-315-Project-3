@@ -122,12 +122,45 @@ input[type="Search" i]::placeholder {
 	background-color: rgb(68, 67, 67);
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 1400px) {
 	.sidenav {
-		padding-top: 15px;
+		width:140px;
 	}
 	.sidenav a {
-		font-size: 18px;
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.sidenav {
+		width:120px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.sidenav {
+		/*padding-top: 153px;*/
+		height:5em;
+		width:100%;
+	}
+	.sidenav li {
+		display: inline-block;
+		border-bottom: 0;
+	}
+	.sidenav a {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 531px) { /*Navbar messes up here without this*/
+	.navbar-brand {
+		font-size: 2rem;
+	}
+	.navbar-brand img {
+		width: 3.5rem;
+		height: auto;
+		position: relative;
+		top: -2px;
 	}
 }
 
