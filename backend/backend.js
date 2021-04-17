@@ -1,4 +1,3 @@
-const database = require('./apis/database');
 const news = require('./apis/news');
 const currents = require('./apis/currents');
 const twitter = require('./apis/twitter');
@@ -14,7 +13,6 @@ module.exports = class backend {
     static k_api = 'api';
 
     constructor() {
-        this.database = null;
         this.news = null;
         this.currents = null;
         this.twitter = null;
@@ -251,12 +249,5 @@ module.exports = class backend {
 
     getPoliticianImageURL(_id) {
         return `https://theunitedstates.io/images/congress/original/${_id}.jpg`;
-    }
-
-    disconnect() {
-        if (this.database) {
-            this.database.disconnect();
-            this.database = null;
-        }
     }
 }

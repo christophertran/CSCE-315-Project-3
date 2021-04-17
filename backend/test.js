@@ -3,10 +3,6 @@ const backend = require('./backend.js');
 async function test() {
     const bk = new backend();
 
-    // console.log(await bk.getNamesFromDatabase());
-    // console.log(await bk.getInformationFromDatabaseByName('ricard'));
-    // console.log(await bk.getInformationFromDatabaseByName('billy mays'));
-    // console.log(await bk.getNamesFromDatabaseByState('Texas'));
     // console.log(await bk.getArticlesFromNewsByName('Joe Biden', 1));
     // console.log(await bk.getArticlesFromCurrentsByName('Joe Biden', 1));
     // console.log(await bk.getArticlesByName('biden', 5));
@@ -17,8 +13,6 @@ async function test() {
     // console.log(await bk.getCongressSenateMembers());
     // console.log(await bk.getCongressSenateNames());
     // console.log(await bk.getCongressHouseNames());
-
-    bk.disconnect();
 };
 
 test();
