@@ -20,6 +20,10 @@ router.get('/faq', (req, res) => {
     res.render('faq');
 });
 
+router.get('/settings', (req, res) => {
+    res.render('settings');
+});
+
 router.get('/autocomplete', (req, res) => {
     bk.getCongressSenateMembersNames().then((names) => {
         res.json(names);

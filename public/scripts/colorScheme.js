@@ -17,7 +17,9 @@ function toggleTheme() {
 
         // set twitter theme
         var twitter = document.getElementById('twitter-timeline');
-        twitter.setAttribute('data-theme', "light");
+        if (twitter != null) {
+            twitter.setAttribute('data-theme', "light");
+        }
 
         console.log(pageColorScheme.getAttribute('href'));
 
@@ -33,7 +35,9 @@ function toggleTheme() {
 
         // set twitter theme
         var twitter = document.getElementById('twitter-timeline');
-        twitter.setAttribute('data-theme', "dark");
+        if (twitter != null) {
+            twitter.setAttribute('data-theme', "dark");
+        }
 
         console.log(pageColorScheme.getAttribute('href'));
 
@@ -55,8 +59,9 @@ function toggleTheme() {
 
         // set twitter theme 
         var twitter = document.getElementById('twitter-timeline');
-        if (twitter != null)
+        if (twitter != null) {
             twitter.setAttribute('data-theme', "dark");
+        }
         
         document.getElementById('slider').checked = true;
     } else {
