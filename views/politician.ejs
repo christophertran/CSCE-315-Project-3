@@ -15,13 +15,16 @@
 								<p class="card-title">Political affiliation: <%= info.party %></p>
 								<p class="card-title">State: <%= info.state %></p>
 								<p class="card-title">Age: <%= info.age %></p>
-								<p class="card-title">DOB: <%= info.date_of_birth %></p>
+								<p class="card-title">DOB: <%= new Date(info.date_of_birth).toDateString() %></p>
 								<p class="card-title">Gender: <%= info.gender %></p>
 								<p class="card-title">URL: <a href="<%= info.url %>"><%= info.url %></a></p>
 								<p class="card-title">Contact: <a href="<%= info.contact_form %>"><%= info.contact_form %></a></p>
 								<p class="card-title">Votes with party: <%= info.votes_with_party_pct %>%</p>
 								<p class="card-title">Votes against party: <%= info.votes_against_party_pct %>%</p>
 								<p class="card-title">Votes missed: <%= info.missed_votes_pct %>%</p>
+							</div>
+							<div class="card-footer text-muted">
+								Last Updated: <%= new Date(info.last_updated).toDateString() %> ProPublica Congress API
 							</div>
 						</div>
 					</div>

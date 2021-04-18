@@ -20,7 +20,10 @@ function toggleTheme() {
             twitter.setAttribute('data-theme', "light");
         }
 
-        document.getElementById('slider').checked = false;
+        var slider = document.getElementById('slider');
+        if (slider) {
+            slider.checked = false;
+        }
     } else {
         setTheme('theme-dark');
         localStorage.setItem('theme', 'theme-dark');
@@ -35,7 +38,10 @@ function toggleTheme() {
             twitter.setAttribute('data-theme', "dark");
         }
 
-        document.getElementById('slider').checked = true;
+        var slider = document.getElementById('slider');
+        if (slider) {
+            slider.checked = true;
+        }
     }
 }
 
@@ -55,7 +61,10 @@ function toggleTheme() {
             twitter.setAttribute('data-theme', "dark");
         }
         
-        document.getElementById('slider').checked = true;
+        var slider = document.getElementById('slider');
+        if (slider) {
+            slider.checked = true;
+        }
     } else {
         setTheme('theme-light');
         localStorage.setItem('theme', 'theme-light');
@@ -70,6 +79,9 @@ function toggleTheme() {
             twitter.setAttribute('data-theme', "light");
         }
         
-        document.getElementById('slider').checked = false;
+        var slider = document.getElementById('slider');
+        if (slider) {
+            slider.checked = false;
+        }
     }
 })();
