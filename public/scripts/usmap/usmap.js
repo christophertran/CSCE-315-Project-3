@@ -37,7 +37,10 @@ $(document).ready(function () {
                 });
             }).catch((error) => {
                 console.log(error);
+            }).then(()=>{
+                window.scrollTo(0,document.body.scrollHeight);
             });
+
         },
 
         'stateHoverStyles': {
