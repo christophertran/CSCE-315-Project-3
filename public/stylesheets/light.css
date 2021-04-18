@@ -349,3 +349,11 @@ input[type=submit] {
 #dynamic-list {
 	padding-left: 0;
 }
+
+.col-7 h3 {
+	text-align: left;
+}
+
+.form-check-input {
+	width: 50px !important;
+}
