@@ -7,7 +7,11 @@
                 <h1 class="title-adapt-color">Favorites</h1>
                 <ul>
                     <% currentUser.favorites.forEach(element => { %>
-                        <li class="text-adapt-color"><%= element %> </li>
+                        <a href="/search?politicianName=<%= element.split(' ')[0] %>+<%= element.split(' ')[1] %>">
+                            <li class="text-adapt-color">
+                                <%= element %>
+                            </li>
+                        </a>
                     <% }) %>
                 </ul>
             </div>
