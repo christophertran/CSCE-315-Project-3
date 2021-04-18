@@ -4,6 +4,22 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
+				<% if (currentUser) { %>
+					<form action="/favorites" method="POST">
+						<input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
+						<button class="text-adapt-color btn btn-sm btn-success">Favorite</button>
+					</form>
+					<form action="/favorites/?_method=DELETE" method="POST">
+						<input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
+						<button class="text-adapt-color btn btn-sm btn-danger">Delete</button>
+					</form>
+				<% } %>
+			</div>
+			<div class="col-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
 				<div class="card mb-3">
 					<div class="row g-0 info-card">
 						<div class="col-md-4">

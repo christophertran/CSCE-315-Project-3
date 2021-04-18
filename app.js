@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const methodOverride = require('method-override');
+
 const mongoose = require('mongoose');
 
 const session = require('express-session');
@@ -28,6 +30,8 @@ app.use(express.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(express.json())
+
+app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
