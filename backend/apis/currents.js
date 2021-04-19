@@ -1,4 +1,3 @@
-const API_INFO = require('../misc/api_info.json');
 const CurrentsAPI = require('currentsapi');
 
 module.exports = class currents {
@@ -13,7 +12,7 @@ module.exports = class currents {
     static k_published = 'published';
 
     constructor() {
-        this.currentsapi = new CurrentsAPI(API_INFO['Currents API']['api key']);
+        this.currentsapi = new CurrentsAPI(process.env.CURRENTS_API_KEY);
     }
 
     async getArticles(_name, _size) {

@@ -1,4 +1,3 @@
-const API_INFO = require('../misc/api_info.json');
 const TwitterAPI = require('twitter-api-client');
 
 module.exports = class twitter {
@@ -11,10 +10,10 @@ module.exports = class twitter {
 
     constructor() {
         this.twitterapi = new TwitterAPI.TwitterClient({
-            apiKey: API_INFO['Twitter API']['api key'],
-            apiSecret: API_INFO['Twitter API']['api secret key'],
-            accessToken: API_INFO['Twitter API']['access token'],
-            accessTokenSecret: API_INFO['Twitter API']['access token secret']
+            apiKey: process.env.TWITTER_API_KEY,
+            apiSecret: process.env.TWITTER_API_SECRET,
+            accessToken: process.env.TWITTER_ACCESS_TOKEN,
+            accessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET
         });
     }
 

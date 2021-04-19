@@ -1,9 +1,8 @@
-const API_INFO = require('../misc/api_info.json');
 const CongressAPI = require('propublica-congress-node');
 
 module.exports = class currents {
     constructor() {
-        this.congressapi = new CongressAPI(API_INFO['Congress API']['api key']);
+        this.congressapi = new CongressAPI(process.env.CONGRESS_API_KEY);
         this.congressNumber = 117;
     }
 

@@ -1,4 +1,3 @@
-const API_INFO = require('../misc/api_info.json');
 const NewsAPI = require('newsapi');
 
 module.exports = class news {
@@ -14,7 +13,7 @@ module.exports = class news {
     static k_content = 'content';
 
     constructor() {
-        this.newsapi = new NewsAPI(API_INFO['News API']['api key']);
+        this.newsapi = new NewsAPI(process.env.NEWS_API_KEY);
     }
 
     async getArticles(_name, _size) {

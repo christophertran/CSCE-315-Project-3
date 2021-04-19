@@ -96,6 +96,7 @@ app.use('/', indexRoutes);
 const userRoutes = require('./routes/users');
 app.use('/', userRoutes);
 
-app.listen(process.env.PORT || 3000, process.env.IP, () => {
-    console.log('PoliLime has been served.');
+const port = process.env.PORT || 3000;
+app.listen(port, process.env.IP, () => {
+    console.log(`PoliLime has been served on port ${port}`);
 });
