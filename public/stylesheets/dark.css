@@ -373,3 +373,10 @@ input[type=submit] {
 .accordion-button:focus {
 	box-shadow: none;
 }
+
+#favorites-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}

@@ -4,16 +4,6 @@
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10">
-				<% if (currentUser) { %>
-					<form action="/favorites" method="POST">
-						<input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
-						<button class="text-adapt-color btn btn-sm btn-success">Favorite</button>
-					</form>
-					<form action="/favorites/?_method=DELETE" method="POST">
-						<input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
-						<button class="text-adapt-color btn btn-sm btn-danger">Delete</button>
-					</form>
-				<% } %>
 			</div>
 			<div class="col-1"></div>
 		</div>
@@ -27,7 +17,14 @@
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title"><i><span class="grayText"><%= info.title %> </span></i><%= info.full_name %></h5>
+								<div class="row">
+									<div class="col-10">
+										<h5 class="card-title"><i><span class="grayText"><%= info.title %> </span></i><%= info.full_name %></h5>
+									</div>
+									<div class="col-2 d-flex justify-content-center">
+										<%- include('./partials/favorite.ejs') %>
+									</div>
+								</div>
 								<p class="card-title">Political affiliation: <%= info.party %></p>
 								<p class="card-title">State: <%= info.state %></p>
 								<p class="card-title">Age: <%= info.age %></p>

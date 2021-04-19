@@ -5,11 +5,30 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h1 class="title-adapt-color">Favorites</h1>
-                <ul>
+                <ul id="favorites-list">
                     <% currentUser.favorites.forEach(element => { %>
                         <a href="/search?politicianName=<%= element.split(' ')[0] %>+<%= element.split(' ')[1] %>">
                             <li class="text-adapt-color">
-                                <%= element %>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <%= element %>
+                                    </div>
+                                    <div class="col-2">
+                                        <% if (currentUser) { %>
+                                            <% if (!currentUser.favorites.includes(element)) { %>
+                                                <form action="/favorites" method="POST">
+                                                    <input type="hidden" id="politicianName" name="politicianName" value="<%= element %>">
+                                                    <button class="text-adapt-color btn btn-md"><i class="far fa-bookmark"></i></button>
+                                                </form>
+                                            <% } else { %>
+                                                <form action="/favorites/?_method=DELETE" method="POST">
+                                                    <input type="hidden" id="politicianName" name="politicianName" value="<%= element %>">
+                                                    <button class="text-adapt-color btn btn-md"><i class="fas fa-bookmark"></i></button>
+                                                </form>
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                </div>
                             </li>
                         </a>
                     <% }) %>
