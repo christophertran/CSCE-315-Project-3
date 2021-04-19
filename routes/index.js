@@ -25,7 +25,7 @@ router.get('/settings', (req, res) => {
 });
 
 router.get('/autocomplete', (req, res) => {
-    bk.getCongressSenateMembersNames().then((names) => {
+    bk.getCongressMembersNames().then((names) => {
         res.json(names);
     }).catch((error) => {
         console.error(error);
@@ -33,7 +33,7 @@ router.get('/autocomplete', (req, res) => {
 });
 
 router.get('/search', (req, res) => {
-    bk.getCongressSenateMembers().then((members) => {
+    bk.getCongressMembers().then((members) => {
         const info = members[req.query.politicianName.toLowerCase()];
         if (info) {
             bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
@@ -49,8 +49,14 @@ router.get('/search', (req, res) => {
     });
 });
 
-router.get('/state/:stateAbbrev', (req, res) => {
+router.get('/state/senate/:stateAbbrev', (req, res) => {
     bk.getCongressSenateMemberNamesByState(req.params.stateAbbrev).then((names) => {
+        res.json(names);
+    });
+});
+
+router.get('/state/house/:stateAbbrev', (req, res) => {
+    bk.getCongressHouseMemberNamesByState(req.params.stateAbbrev).then((names) => {
         res.json(names);
     });
 });

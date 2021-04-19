@@ -72,7 +72,7 @@ module.exports = class backend {
         return this.currents.getArticles(_name, _size).then((results) => {
             var ret = [];
 
-            if (results) {
+            if (results && results.length) {
                 results.forEach(element => {
                     var temp = {}
 
@@ -105,7 +105,7 @@ module.exports = class backend {
     getCongressMembersNames() {
         return this.getCongressSenateMembersNames().then((senate) => {
             return this.getCongressHouseMembersNames().then((house) => {
-                return senate.concat(house);
+                return Object.assign(senate, house);
             });
         });
     }
@@ -172,7 +172,7 @@ module.exports = class backend {
         });
     }
 
-    getCongressHouseMemberNamesByState() {
+    getCongressHouseMemberNamesByState(_state) {
         if (!this.congress) {
             this.congress = new congress();
         }
@@ -193,7 +193,7 @@ module.exports = class backend {
     getCongressMembers() {
         return this.getCongressSenateMembers().then((senate) => {
             return this.getCongressHouseMembers().then((house) => {
-                return senate.concat(house);
+                return Object.assign(senate, house);
             });
         });
     }
