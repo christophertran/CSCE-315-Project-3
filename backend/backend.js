@@ -105,7 +105,7 @@ module.exports = class backend {
     getCongressMembersNames() {
         return this.getCongressSenateMembersNames().then((senate) => {
             return this.getCongressHouseMembersNames().then((house) => {
-                return Object.assign(senate, house);
+                return senate.concat(house);
             });
         });
     }
