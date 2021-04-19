@@ -8,6 +8,12 @@ router.get('/', (req, res) => {
     res.render('landing');
 });
 
+router.get('/politicians', (req, res) => {
+    bk.getCongressMembersNamesOrganizedByState().then((members) => {
+        res.render('politicians', { members: members });
+    });
+});
+
 router.get('/about', (req, res) => {
     res.render('about');
 });
@@ -33,7 +39,7 @@ router.get('/autocomplete', (req, res) => {
 });
 
 router.get('/search', (req, res) => {
-    bk.getCongressMembers().then((members) => {
+    bk.getCongressMembersOrganizedByName().then((members) => {
         const info = members[req.query.politicianName.toLowerCase()];
         if (info) {
             bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
