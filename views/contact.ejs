@@ -1,74 +1,41 @@
-
 <%- include("partials/header.ejs") %>
-<!DOCTYPE html>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
 
+    <!DOCTYPE html>
     <!--Section: Contact v.2-->
     <section style="margin:auto; width: 1000px;" class="mb-4">
 
         <!--Section heading-->
         <h2 class="h1-responsive font-weight-bold text-center my-4 title-adapt-color">Contact us</h2>
         <!--Section description-->
-        <p class="text-center w-responsive mx-auto mb-5 text-adapt-color"> Feel free to contact us regarding questions, queries or
+        <p class="text-center w-responsive mx-auto mb-5 text-adapt-color"> Feel free to contact us regarding questions,
+            queries or
             comments!</p>
 
         <div class="row">
-
-            <form
-            id="contact-form"
-            method="POST"
-            action="send"
-            enctype="multipart/form-data"
-          >
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-6">
-                  <input
-                    placeholder="Name"
-                    id="name"
-                    name="name"
-                    type="text"
-                    class="form-control"
-                    required
-                  />
+            <form id="contact-form" method="POST" action="/send">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input placeholder="Name" id="name" name="name" type="text" class="form-control" required />
+                        </div>
+                        <div class="col-md-6">
+                            <input placeholder="Email" id="email" type="email" name="email" class="form-control"
+                                aria-describedby="emailHelp" required />
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                  <input
-                    placeholder="Email"
-                    id="email"
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    aria-describedby="emailHelp"
-                    required
-                  />
+                <div class="form-group">
+                    <input placeholder="Subject" id="subject" name="subject" type="text" class="form-control"
+                        required />
                 </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <input
-                placeholder="Subject"
-                id="subject"
-                name="subject"
-                type="text"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <textarea
-                placeholder="Message"
-                id="message"
-                name="message"
-                class="form-control"
-                rows="3"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" value="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </form>
+                <div class="form-group">
+                    <textarea placeholder="Message" id="message" name="message" class="form-control" rows="3"
+                        required></textarea>
+                </div>
+                <button type="submit" value="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </form>
             <!--Grid column-->
 
             <!--Grid column-->
@@ -92,7 +59,5 @@
         </div>
 
     </section>
-    <script src="cont.js"></script>
-   
 
 <%- include("partials/footer.ejs") %>

@@ -4,13 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require('express');
 
-//---- for contact us page
-const nodemailer = require("nodemailer");
-const multiparty = require("multiparty");
-//-----
-
 const app = express();
-
 
 const methodOverride = require('method-override');
 
@@ -102,57 +96,6 @@ app.use('/', indexRoutes);
 
 const userRoutes = require('./routes/users');
 app.use('/', userRoutes);
-
-
-  var smtpTransport = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // use SSL
-    auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASS
-    }
-});
-  
-  // verify connection configuration
-  smtpTransport.verify(function (error, success) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Server is ready to take our messages");
-    }
-  });
-  
-  app.post("/send", (req, res) => {
-    let form = new multiparty.Form();
-    let data = {};
-    form.parse(req, function (err, fields) {
-      console.log(fields);
-      Object.keys(fields).forEach(function (property) {
-        data[property] = fields[property].toString();
-      });
-      console.log(data);
-      const mail = {
-        sender: `${data.name} <${data.email}>`,
-        to: process.env.EMAIL, // receiver email,
-        subject: data.subject,
-        text: `${data.name} <${data.email}> \n${data.message}`,
-      };
-      smtpTransport.sendMail(mail, (err, data) => {
-        if (err) {
-          console.log(err);
-          res.status(500).send("Something went wrong.");
-        } 
-        else {
-          res.status(200).send("Email successfully sent to recipient! Please go back to the previous screen");
-        }
-      });
-    });
-  });
-  app.route("/").get(function (req, res) {
-    res.sendFile(process.cwd() + "/views/contact.ejs");
-  });
-  
 
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, () => {
