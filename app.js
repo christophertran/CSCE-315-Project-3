@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 
@@ -14,7 +18,11 @@ const LocalStrategy = require('passport-local');
 
 const User = require('./models/user');
 
-mongoose.connect('mongodb+srv://dev:LI0aPyOQAwjg8sQD@cluster0.9yv30.mongodb.net/PoliLime?retryWrites=true&w=majority', {
+const MongoDBStore = require("connect-mongo")(session);
+
+const dbUrl = process.env.DB_URL;
+
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     userCreateIndex: true,
     useUnifiedTopology: true,
@@ -24,6 +32,10 @@ mongoose.connect('mongodb+srv://dev:LI0aPyOQAwjg8sQD@cluster0.9yv30.mongodb.net/
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
+
+db.once('open', () => {
+    console.log("Database connected");
+});
 
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
@@ -36,8 +48,21 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
+const secret = process.env.SECRET || 'thisisasecret'
+
+const store = new MongoDBStore({
+    url: dbUrl,
+    secret: secret,
+    touchAfter: 24 * 60 * 60
+});
+
+store.on('error', (error) => {
+    console.error('Session store error', error);
+})
+
 const sessionConfig = {
-    secret: 'thisisasecret',
+    store: store,
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
