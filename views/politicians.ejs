@@ -17,7 +17,11 @@
 				<% Object.keys(members.senate).forEach((state) => { %>
 					<ul class="text-adapt-color"><%= state %></ul>
 					<% members.senate[state].forEach((member) => { %>
-						<li class="text-adapt-color"><%= member %></li>
+						<li class="text-adapt-color">
+							<a href="/search?politicianName=<%= member.split(' ')[0] %>+<%= member.split(' ')[1] %>">
+								<%= member %>
+							</a>
+						</li>
 					<% }) %>
 				<% }) %>
 			</div>
@@ -26,7 +30,11 @@
 				<% Object.keys(members.house).forEach((state) => { %>
 					<ul class="text-adapt-color"><%= state %></ul>
 					<% members.house[state].forEach((member) => { %>
-						<li class="text-adapt-color"><%= member %></li>
+						<li class="text-adapt-color">
+							<a href="/search?politicianName=<%= member.split(' ')[0] %>+<%= member.split(' ')[1] %>">
+								<%= member %>
+							</a>
+						</li>
 					<% }) %>
 				<% }) %>
 			</div>
