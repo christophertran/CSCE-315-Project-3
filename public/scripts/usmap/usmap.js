@@ -16,6 +16,7 @@ $(document).ready(function () {
             axios.get("/state/senate/" + data.name).then((result) => {
                 var ul = document.getElementById('senate-list');
 
+                // deletes previous list
                 ul.innerHTML = '';
 
                 document.getElementById('senateTitle').style.opacity = 1.0;
@@ -41,17 +42,30 @@ $(document).ready(function () {
             }).catch((error) => {
                 console.log(error);
             }).then(()=>{
-                window.scrollTo(0,document.body.scrollHeight);
+                //window.scrollTo(0,document.body.scrollHeight);
             });
 
             axios.get("/state/house/" + data.name).then((result) => {
-                var ul = document.getElementById('house-list');
+                var ul1 = document.getElementById('house-list1');
+                var ul2 = document.getElementById('house-list2');
+                var ul3 = document.getElementById('house-list3');
+                var ul4 = document.getElementById('house-list4');
+                var ul5 = document.getElementById('house-list5');
 
-                ul.innerHTML = '';
+                // deletes previous list
+                ul1.innerHTML = '';
+                ul2.innerHTML = '';
+                ul3.innerHTML = '';
+                ul4.innerHTML = '';
+                ul5.innerHTML = '';
 
                 document.getElementById('houseTitle').style.opacity = 1.0;
 
+                var count = 0;
+
                 result.data.forEach((element) => {
+                    count += 1;
+
                     var li = document.createElement('li');
                     var btn = document.createElement('button');
                     var a = document.createElement('a');
@@ -67,12 +81,27 @@ $(document).ready(function () {
 
                     btn.appendChild(a);
                     li.appendChild(btn);
-                    ul.appendChild(li);
+                    if (count === 1) {
+                        ul3.appendChild(li);
+                    }
+                    else if (count === 2) {
+                        ul2.appendChild(li);
+                    }
+                    else if (count === 3) {
+                        ul4.appendChild(li);
+                    }
+                    else if (count === 4) {
+                        ul1.appendChild(li);
+                    }
+                    else if (count === 5) {
+                        ul5.appendChild(li);
+                        count = 0;
+                    }
                 });
             }).catch((error) => {
                 console.log(error);
             }).then(()=>{
-                window.scrollTo(0,document.body.scrollHeight);
+                window.scrollTo(0, document.body.scrollHeight);
             });
         },
 
