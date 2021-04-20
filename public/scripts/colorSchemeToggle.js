@@ -20,12 +20,25 @@ function toggleTheme() {
     }
 }
 
-var slider = document.getElementById('slider');
+(function () {
+    var twitter = document.getElementById('twitter-timeline');
+    var slider = document.getElementById('slider');
 
-if (slider) {
     if (localStorage.getItem('theme') === 'theme-dark') {
-        slider.checked = true;
+        if (slider) {
+            slider.checked = true;
+        }
+
+        if (twitter) {
+            twitter.setAttribute('data-theme', "dark");
+        }
     } else {
-        slider.checked = false;
+        if (slider) {
+            slider.checked = false;
+        }
+
+        if (twitter) {
+            twitter.setAttribute('data-theme', "light");
+        }
     }
-}
+})();
