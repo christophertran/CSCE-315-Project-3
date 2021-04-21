@@ -10,9 +10,81 @@ router.get('/', (req, res) => {
     res.render('landing');
 });
 
+const states = {
+    "AL": "Alabama",
+    "AK": "Alaska",
+    "AS": "American Samoa",
+    "AZ": "Arizona",
+    "AR": "Arkansas",
+    "CA": "California",
+    "CO": "Colorado",
+    "CT": "Connecticut",
+    "DE": "Delaware",
+    "DC": "District Of Columbia",
+    "FM": "Federated States Of Micronesia",
+    "FL": "Florida",
+    "GA": "Georgia",
+    "GU": "Guam",
+    "HI": "Hawaii",
+    "ID": "Idaho",
+    "IL": "Illinois",
+    "IN": "Indiana",
+    "IA": "Iowa",
+    "KS": "Kansas",
+    "KY": "Kentucky",
+    "LA": "Louisiana",
+    "ME": "Maine",
+    "MH": "Marshall Islands",
+    "MD": "Maryland",
+    "MA": "Massachusetts",
+    "MI": "Michigan",
+    "MN": "Minnesota",
+    "MS": "Mississippi",
+    "MO": "Missouri",
+    "MT": "Montana",
+    "NE": "Nebraska",
+    "NV": "Nevada",
+    "NH": "New Hampshire",
+    "NJ": "New Jersey",
+    "NM": "New Mexico",
+    "NY": "New York",
+    "NC": "North Carolina",
+    "ND": "North Dakota",
+    "MP": "Northern Mariana Islands",
+    "OH": "Ohio",
+    "OK": "Oklahoma",
+    "OR": "Oregon",
+    "PW": "Palau",
+    "PA": "Pennsylvania",
+    "PR": "Puerto Rico",
+    "RI": "Rhode Island",
+    "SC": "South Carolina",
+    "SD": "South Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "UT": "Utah",
+    "VT": "Vermont",
+    "VI": "Virgin Islands",
+    "VA": "Virginia",
+    "WA": "Washington",
+    "WV": "West Virginia",
+    "WI": "Wisconsin",
+    "WY": "Wyoming"
+};
+
+const affiliations = {
+    "R": "Republican",
+    "D": "Democrat"
+}
+
+const genders = {
+    "M": "Male", 
+    "F": "Female"
+}
+
 router.get('/politicians', (req, res) => {
     bk.getCongressMembersNamesOrganizedByState().then((members) => {
-        res.render('politicians', { members: members });
+        res.render('politicians', { members: members, states: states });
     });
 });
 
@@ -44,8 +116,13 @@ router.get('/search', (req, res) => {
     bk.getCongressMembersOrganizedByName().then((members) => {
         const info = members[req.query.politicianName.toLowerCase()];
         if (info) {
+            setTimeout(() => {
+                console.log(`Unable to find articles for ${req.query.politicianName.toLowerCase()}`);
+                return res.render("politician", { info: info, articles: [], searchInput: req.query.politicianName, states: states, affiliations: affiliations, genders: genders });
+            }, 10 * 1000); // Timeout in 10 seconds.
+
             bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
-                res.render("politician", { info: info, articles: articles, searchInput: req.query.politicianName });
+                res.render("politician", { info: info, articles: articles, searchInput: req.query.politicianName, states: states, affiliations: affiliations, genders: genders });
             }).catch((error) => {
                 console.error(error);
             });
@@ -84,7 +161,7 @@ smtpTransport.verify(function (error, success) {
     if (error) {
         console.log(error);
     } else {
-        console.log("Server is ready to take our messages");
+        console.log("Mail server is ready");
     }
 });
 
