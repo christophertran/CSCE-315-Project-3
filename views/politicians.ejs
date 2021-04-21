@@ -18,7 +18,7 @@
 					<ul class="text-adapt-color"><%= states[state] %></ul>
 					<% members.senate[state].forEach((member) => { %>
 						<li class="text-adapt-color">
-							<a href="/search?politicianName=<%= member.split(' ')[0] %>+<%= member.split(' ')[1] %>">
+							<a href="/search?politicianName=<%= member %>">
 								<%= member %>
 							</a>
 						</li>
@@ -31,7 +31,7 @@
 					<ul class="text-adapt-color"><%= states[state] %></ul>
 					<% members.house[state].forEach((member) => { %>
 						<li class="text-adapt-color">
-							<a href="/search?politicianName=<%= member.split(' ')[0] %>+<%= member.split(' ')[1] %>">
+							<a href="/search?politicianName=<%= member %>">
 								<%= member %>
 							</a>
 						</li>

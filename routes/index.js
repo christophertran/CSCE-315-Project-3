@@ -116,18 +116,19 @@ router.get('/search', (req, res) => {
     bk.getCongressMembersOrganizedByName().then((members) => {
         const info = members[req.query.politicianName.toLowerCase()];
         if (info) {
-            setTimeout(() => {
+            var timeout = setTimeout(() => {
                 console.log(`Unable to find articles for ${req.query.politicianName.toLowerCase()}`);
                 return res.render("politician", { info: info, articles: [], searchInput: req.query.politicianName, states: states, affiliations: affiliations, genders: genders });
             }, 25 * 1000); // Timeout in 10 seconds.
 
             bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
-                res.render("politician", { info: info, articles: articles, searchInput: req.query.politicianName, states: states, affiliations: affiliations, genders: genders });
+                clearTimeout(timeout);
+                return res.render("politician", { info: info, articles: articles, searchInput: req.query.politicianName, states: states, affiliations: affiliations, genders: genders });
             }).catch((error) => {
                 console.error(error);
             });
         } else {
-            res.render("politician_dne", { searchInput: req.query.politicianName });
+            return res.render("politician_dne", { searchInput: req.query.politicianName });
         }
     }).catch((error) => {
         console.error(error);

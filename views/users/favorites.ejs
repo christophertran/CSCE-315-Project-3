@@ -7,7 +7,7 @@
                 <h1 class="title-adapt-color">Favorites</h1>
                 <ul id="favorites-list">
                     <% currentUser.favorites.forEach(element => { %>
-                        <a href="/search?politicianName=<%= element.split(' ')[0] %>+<%= element.split(' ')[1] %>">
+                        <a href="/search?politicianName=<%= element %>">
                             <li class="text-adapt-color">
                                 <div class="row">
                                     <div class="col-10">
