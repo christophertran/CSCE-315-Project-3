@@ -13,7 +13,9 @@
 
     <!-- Front end HTTP requests library -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <!-- Translate tool -->
+    <script src="http://free-website-translation.com/scripts/fwt.js"> </script>
+    
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/206051e64a.js" crossorigin="anonymous"></script>
 
@@ -34,7 +36,7 @@
 
     <!-- Customs JS to set color theme on page load -->
     <script src="/scripts/colorScheme.js"></script>
-
+    
     <title>PoliLime</title>
 </head>
 
@@ -43,9 +45,15 @@
         <div style="height: 80px" class="container-fluid">
             <a class="navbar-brand" href="/">
                 PoliLime <img src="/img/logo.png" />
-            </a>
-
+            </a>          
+           
+                
             <form class="d-flex" autocomplete="off" action="/search" method="GET">
+                <!-- Translate button -->
+                <a href="http://free-website-translation.com/" id="ftwtranslation_button" style= "padding-top:8px;text-decoration:none; color:white" hreflang="en">           
+                    <i class="fa fa-language" aria-hidden="true"></i> Translate </a>
+                    &nbsp;  &nbsp;  
+                        
                 <div class="autocomplete">
                     <input name="politicianName" class="form-control me-2 search-bar-edge" type="text"
                         placeholder="Politician Name" aria-label="Search" id="myInput" />
@@ -94,6 +102,8 @@
             <li class="sidenav-item">
                 <a href="/settings"><i class="fas fa-cog"></i> Settings</a>
             </li>
+            
+           
             <% if (!currentUser) { %>
                 <li class="sidenav-item">
                     <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
