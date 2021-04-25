@@ -2,12 +2,12 @@
     <% if (!currentUser.favorites.includes(info.full_name)) { %>
         <form action="/favorites" method="POST">
             <input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
-            <button class="text-adapt-color btn btn-md"><i class="far fa-bookmark"></i></button>
+            <button class="btn btn-outline-success round-button"><i class="far fa-bookmark"></i></button>
         </form>
     <% } else { %>
         <form action="/favorites/?_method=DELETE" method="POST">
             <input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
-            <button class="text-adapt-color btn btn-md"><i class="fas fa-bookmark"></i></button>
+            <button class="btn btn-outline-success round-button"><i class="fas fa-bookmark"></i></button>
         </form>
     <% } %>
 <% } %>
