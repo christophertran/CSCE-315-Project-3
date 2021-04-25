@@ -296,6 +296,15 @@ input[type=submit] {
 	text-align: center;
 }
 
+.favorites-container {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
 .alert {
 	text-align: center;
 }
@@ -391,4 +400,5 @@ input[type=submit] {
 	padding: 0;
 	margin: 0;
 	display: inline-block;
+	text-align: left;
 }

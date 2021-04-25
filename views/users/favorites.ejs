@@ -1,29 +1,30 @@
 <%- include("../partials/header.ejs") %>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
+    <div class="container favorites-container">
+        <div class="row justify-content-center">
+            <div class="col-4">
                 <h1 class="title-adapt-color">Favorites</h1>
                 <ul id="favorites-list">
                     <% currentUser.favorites.forEach(element => { %>
                         <a href="/search?politicianName=<%= element %>">
                             <li class="text-adapt-color">
-                                <div class="row">
+                                <div class="row" style="padding-bottom: 10px;">
                                     <div class="col-10">
-                                        <%= element %>
+                                        <btn class="btn btn-outline-success">
+                                            <%= element %>
+                                        </btn>
                                     </div>
                                     <div class="col-2">
                                         <% if (currentUser) { %>
                                             <% if (!currentUser.favorites.includes(element)) { %>
                                                 <form action="/favorites" method="POST">
                                                     <input type="hidden" id="politicianName" name="politicianName" value="<%= element %>">
-                                                    <button class="text-adapt-color btn btn-md"><i class="far fa-bookmark"></i></button>
+                                                    <button class="btn btn-outline-success round-button"><i class="far fa-bookmark"></i></button>
                                                 </form>
                                             <% } else { %>
                                                 <form action="/favorites/?_method=DELETE" method="POST">
                                                     <input type="hidden" id="politicianName" name="politicianName" value="<%= element %>">
-                                                    <button class="text-adapt-color btn btn-md"><i class="fas fa-bookmark"></i></button>
+                                                    <button class="btn btn-outline-success round-button"><i class="fas fa-bookmark"></i></button>
                                                 </form>
                                             <% } %>
                                         <% } %>
@@ -34,7 +35,6 @@
                     <% }) %>
                 </ul>
             </div>
-            <div class="col-2"></div>
         </div>
     </div>
 
