@@ -26,10 +26,7 @@ $(document).ready(function () {
                     var btn = document.createElement('button');
                     var a = document.createElement('a');
 
-                    var firstName = element.split(' ')[0].toLowerCase();
-                    var lastName = element.split(' ')[1].toLowerCase();
-
-                    a.setAttribute('href', '/search?politicianName=' + firstName + '+' + lastName);
+                    a.setAttribute('href', '/search?politicianName=' + element);
                     a.setAttribute('class', 'nameLink');
                     a.text = element.toUpperCase();
 
@@ -70,10 +67,7 @@ $(document).ready(function () {
                     var btn = document.createElement('button');
                     var a = document.createElement('a');
 
-                    var firstName = element.split(' ')[0].toLowerCase();
-                    var lastName = element.split(' ')[1].toLowerCase();
-
-                    a.setAttribute('href', '/search?politicianName=' + firstName + '+' + lastName);
+                    a.setAttribute('href', '/search?politicianName=' + element);
                     a.setAttribute('class', 'nameLink');
                     a.text = element.toUpperCase();
 

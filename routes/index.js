@@ -119,7 +119,7 @@ router.get('/search', (req, res) => {
             var timeout = setTimeout(() => {
                 console.log(`Unable to find articles for ${req.query.politicianName.toLowerCase()}`);
                 return res.render("politician", { info: info, articles: [], searchInput: req.query.politicianName, states: states, affiliations: affiliations, genders: genders });
-            }, 25 * 1000); // Timeout in 10 seconds.
+            }, 20 * 1000); // Timeout in 20 seconds.
 
             bk.getArticlesByName(req.query.politicianName.toLowerCase(), 20).then((articles) => {
                 clearTimeout(timeout);
