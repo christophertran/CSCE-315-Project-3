@@ -92,6 +92,10 @@ router.get('/allpoliticians', (req, res) => {
     });
 });
 
+router.get('/voting', (req, res) => {
+    res.render('voting');
+});
+
 router.get('/about', (req, res) => {
     res.render('about');
 });

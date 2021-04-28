@@ -295,6 +295,15 @@ input[type=submit] {
 	text-align: center;
 }
 
+.voting-container {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
 .favorites-container {
 	height: 80%;
 	display: flex;
