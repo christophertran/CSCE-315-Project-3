@@ -500,10 +500,20 @@ input[type=submit] {
 	border-color: #198754;
 }
 
+.selected:hover {
+	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+}
+
 .not-selected {
 	color: #fff;
 	background-color: transparent;
 	border-color: #198754;
+}
+
+.not-selected:hover {
+	background-color: #198754;
 }
 
 .selected:focus, .selected:focus {
@@ -512,4 +522,9 @@ input[type=submit] {
 
 .not-selected:focus, .not-selected:focus {
 	box-shadow: none;
+}
+
+.spacer {
+	padding-left: 20px;
+	padding-right: 20px;
 }

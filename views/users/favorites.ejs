@@ -2,9 +2,9 @@
 
     <div class="container favorites-container">
         <div class="row justify-content-center">
-            <div class="col-4">
-                <h1 class="title-adapt-color" style="padding-bottom: 10px">Favorites</h1>
-                <ul id="favorites-list">
+            <div class="col-5">
+                <h1 class="title-adapt-color" style="padding-bottom: 20px">Favorites</h1>
+                <ul id="favorites-list" style="width: 100%">
                     <% currentUser.favorites.forEach(element => { %>
                         <a href="/search?politicianName=<%= element %>">
                             <li class="text-adapt-color">

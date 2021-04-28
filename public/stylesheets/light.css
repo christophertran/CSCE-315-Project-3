@@ -501,10 +501,20 @@ input[type=submit] {
 	border-color: #198754;
 }
 
-.not-selected {
+.selected:hover {
 	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+}
+
+.not-selected {
+	color: inherit;
 	background-color: transparent;
 	border-color: #198754;
+}
+
+.not-selected:hover {
+	background-color: #198754;
 }
 
 .selected:focus, .selected:focus {
