@@ -61,7 +61,7 @@ function getSenate() {
 
         var state_title = document.createElement('h3');
         state_title.setAttribute('class', 'title-adapt-color')
-        state_title.innerText = key;
+        state_title.innerText = states[key]; // We are using the states dictionary from usmap.js
 
         state_row.appendChild(state_title);
         small_container.appendChild(state_row);
@@ -107,7 +107,7 @@ function getHouse() {
 
         var state_title = document.createElement('h3');
         state_title.setAttribute('class', 'title-adapt-color')
-        state_title.innerText = key;
+        state_title.innerText = states[key]; // We are using the states dictionary from usmap.js
 
         state_row.appendChild(state_title);
         small_container.appendChild(state_row);

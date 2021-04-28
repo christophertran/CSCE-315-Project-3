@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container voting-container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h1 class="title-adapt-color">Find Voting Information</h1>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8" align="center">
+                <link rel="stylesheet" type="text/css" href="https://votinginfotool.org/css/compiled/vit.css" />
+                <script src="https://votinginfotool.org/js/compiled/app.js"></script>
+                <div id="_vit" style="width: 100%; height: 480px;"></div>
+                <script>
+                    var config = {
+                        "logo": { "type": "default" },
+                        "official-only": true
+                    };
+                    var loadVIT = function () {
+                        if (typeof vit !== 'undefined') {
+                            vit.core.init("_vit", config);
+                        } else {
+                            setTimeout(loadVIT, 500);
+                        };
+                    };
+                    loadVIT();
+                </script>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <br><br>
+                <h1 class="title-adapt-color">Find Local Representatives</h1>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <iframe src="https://myreps.datamade.us/index.html" width="100%" height="720px"></iframe>
+                <br><br><br><br><br><br>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
