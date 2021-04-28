@@ -151,7 +151,7 @@ module.exports = class backend {
             return this.congress.getSenateMembers().then((senate) => {
                 var temp = {};
 
-                temp.house = [];
+                temp.house = {};
                 house.forEach((member) => {
                     if (!temp.house[member.state]) {
                         temp.house[member.state] = [member.first_name + ' ' + member.last_name]
@@ -160,7 +160,7 @@ module.exports = class backend {
                     }
                 });
 
-                temp.senate = [];
+                temp.senate = {};
                 senate.forEach((member) => {
                     if (!temp.senate[member.state]) {
                         temp.senate[member.state] = [member.first_name + ' ' + member.last_name]

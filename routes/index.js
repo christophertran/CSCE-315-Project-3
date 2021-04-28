@@ -83,8 +83,12 @@ const genders = {
 }
 
 router.get('/politicians', (req, res) => {
+    res.render('politicians');
+});
+
+router.get('/allpoliticians', (req, res) => {
     bk.getCongressMembersNamesOrganizedByState().then((members) => {
-        res.render('politicians', { members: members, states: states });
+        res.json(members);
     });
 });
 
