@@ -7,7 +7,7 @@
     <% } else { %>
         <form action="/favorites/?_method=DELETE" method="POST">
             <input type="hidden" id="politicianName" name="politicianName" value="<%= info.full_name %>">
-            <button class="btn round-button delete-btn"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn round-button favorited"><i class="far fa-bookmark"></i></button>
         </form>
     <% } %>
 <% } %>
