@@ -295,6 +295,15 @@ input[type=submit] {
 	text-align: center;
 }
 
+.voting-container {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
 .favorites-container {
 	height: 80%;
 	display: flex;
@@ -441,4 +450,86 @@ input[type=submit] {
 	padding: 15px;
 	margin: 20px 30px;
 	display: flex;
+}
+
+#politician-list {
+	padding-top: 40px;
+	margin: 0;
+}
+
+.house-list {
+	display: flex;
+	flex-direction: column;
+	max-height: 4000px;
+}
+
+.senate-list {
+	display: flex;
+	flex-direction: column;
+	max-height: 1500px;
+}
+
+@media (max-width: 1400px) {
+	.house-list {
+		max-height: 5000px;
+	}
+
+	.senate-list {
+		max-height: 2000px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.house-list {
+		max-height: 8000px;
+	}
+
+	.senate-list {
+		max-height: 4000px;
+	}
+}
+
+@media (max-width: 600px) {
+	.house-list {
+		max-height: none;
+	}
+
+	.senate-list {
+		max-height: none;
+	}
+}
+
+.small-container {
+	max-width: 300px;
+	padding-bottom: 20px;
+}
+
+.selected {
+	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+}
+
+.selected:hover {
+	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+}
+
+.not-selected {
+	color: inherit;
+	background-color: transparent;
+	border-color: #198754;
+}
+
+.not-selected:hover {
+	background-color: #198754;
+}
+
+.selected:focus, .selected:focus {
+	box-shadow: none;
+}
+
+.not-selected:focus, .not-selected:focus {
+	box-shadow: none;
 }
