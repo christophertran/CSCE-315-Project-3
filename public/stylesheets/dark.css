@@ -419,3 +419,25 @@ input[type=submit] {
 .delete-btn:focus, .delete-btn:focus {
 	box-shadow: 0 0 0 0.2rem rgb(187, 0, 0, 0.5);
 }
+
+.favorited {
+	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+}
+
+.favorited:hover {
+	color: #198754;
+	background-color: transparent;
+	border-color: #198754;
+}
+
+.favorited:focus, .favorited:focus {
+	box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.name-card {
+	padding: 15px;
+	margin: 20px 30px;
+	display: flex;
+}
