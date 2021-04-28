@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs") %>
-
-	<div class="container" style="text-align: center;">
+	
+<div class="container" style="text-align: center;">
 		<div class="row" style="margin-bottom: 50px;">
 			<h1 class="title-adapt-color">
 				Settings:
@@ -24,6 +24,29 @@
             </div>
             <div class="col-1"></div>
 		</div>
+		<div class="row">
+			<div class="col-2"></div>
+			<div class="col-7">
+				<h3 class="title-adapt-color">
+                    <!-- Translate button 
+					
+					<a href="http://free-website-translation.com/" id="ftwtranslation_button" style= "padding-top:8px;text-decoration:none; color:black" hreflang="en">           
+					<i class="fa fa-language" aria-hidden="true"></i> Translate </a>
+					&nbsp;  &nbsp;  
+					-->
+					Translate
+                </h3>
+			</div>
+			<div class="col-2">
+                <div class="form-check form-switch">
+                    <div class="form-check form-switch pull-right">
+                        <input class="form-check-input" type="checkbox" onchange= "translateTab()" id="slider">
+                        <span class="slider round"></span>
+                    </div>
+                </div>
+            </div>
+			
+		</div>			
 	</div>
     
 <%- include("partials/footer.ejs") %>
