@@ -36,8 +36,11 @@
     <!-- Customs JS to set color theme on page load -->
     <script src="/scripts/colorScheme.js"></script>
 
-     <!-- Customs JS to set color theme on page load -->
+     <!-- for the translate button -->
      <script src="/scripts/translateTab.js"></script>
+
+     <!-- for friend invite link -->
+     <script src="/scripts/copy.js"></script>
     
     <title>PoliLime</title>
 </head>
@@ -120,5 +123,13 @@
                     <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
             <% } %>
+
+            <li class="sidenav-item" >               
+                <br> 
+                <button type="button" onClick="copyToClipboard()" style="display: block;font-size: 14px;background:none; border:none; color:white">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>   Invite a friend  </button>
+                    
+                  
+            </li>
         </ul>
     </div>
