@@ -85,7 +85,7 @@ function getSenate() {
             var a = document.createElement('a');
 
             a.setAttribute('href', '/search?politicianName=' + name);
-            a.setAttribute('class', 'title-adapt-color');
+            a.setAttribute('class', 'title-adapt-color no-underline');
             a.text = name.toUpperCase();
 
             people_row.appendChild(a);
@@ -131,7 +131,7 @@ function getHouse() {
             var a = document.createElement('a');
 
             a.setAttribute('href', '/search?politicianName=' + name);
-            a.setAttribute('class', 'title-adapt-color');
+            a.setAttribute('class', 'title-adapt-color  no-underline');
             a.text = name.toUpperCase();
 
             people_row.appendChild(a);

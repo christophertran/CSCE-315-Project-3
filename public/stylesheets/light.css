@@ -411,8 +411,6 @@ input[type=submit] {
 	text-align: left;
 }
 
-
-
 .delete-btn {
 	color: red;
 	border-color: red;
@@ -517,12 +515,13 @@ input[type=submit] {
 }
 
 .not-selected {
-	color: inherit;
+	color: #198754;
 	background-color: transparent;
 	border-color: #198754;
 }
 
 .not-selected:hover {
+	color: #fff;
 	background-color: #198754;
 }
 
@@ -532,4 +531,8 @@ input[type=submit] {
 
 .not-selected:focus, .not-selected:focus {
 	box-shadow: none;
+}
+
+.no-underline {
+	text-decoration: none;
 }
