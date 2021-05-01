@@ -48,7 +48,7 @@
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark bg">
         <div style="height: 80px" class="container-fluid">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/" data-toggle="tooltip" data-placement="bottom" title="PoliLime">
                 PoliLime <img src="/img/logo.png" />
             </a>          
            
@@ -57,16 +57,16 @@
                 
                 <div class="autocomplete">
                     <input name="politicianName" class="form-control me-2 search-bar-edge" type="text"
-                        placeholder="Politician Name" aria-label="Search" id="myInput" />
+                        placeholder="Politician Name" aria-label="Search" id="myInput" data-toggle="tooltip" data-placement="bottom" title="Search for a Politician"/>
                 </div>
-                <button class="btn btn-outline-success round-button" type="submit">
+                <button class="btn btn-outline-success round-button" type="submit" data-toggle="tooltip" data-placement="bottom" title="Search">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
         </div>
     </nav>
 
-    <button class="btn btn-outline-success round-button" onclick="topFunction()" id="goUpBtn">
+    <button class="btn btn-outline-success round-button" onclick="topFunction()" id="goUpBtn" data-toggle="tooltip" data-placement="bottom" title="Back to Top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -86,47 +86,47 @@
     <div class="col-2 col-md-1 col-sm-1 sidenav">
         <ul style="text-align:left;">
             <li class="sidenav-item">
-                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="sidenav-item">
-                <a href="/politicians"><i class="fas fa-flag-usa"></i> Politicians</a>
+                <a href="/politicians" data-toggle="tooltip" data-placement="bottom" title="List of Politicians"><i class="fas fa-flag-usa"></i> Politicians</a>
             </li>
             <li class="sidenav-item">
-                <a href="/voting"><i class="fas fa-vote-yea"></i> Voting</a>
+                <a href="/voting" data-toggle="tooltip" data-placement="bottom" title="Voting"><i class="fas fa-vote-yea"></i> Voting</a>
             </li>
             <li class="sidenav-item">
-                <a href="/about"><i class="fas fa-lemon"></i> About Us</a>
+                <a href="/about" data-toggle="tooltip" data-placement="bottom" title="About Us"><i class="fas fa-lemon"></i> About Us</a>
             </li>
             <li class="sidenav-item">
-                <a href="/contact"><i class="fas fa-address-card"></i> Contact Us</a>
+                <a href="/contact" data-toggle="tooltip" data-placement="bottom" title="Contact Us"><i class="fas fa-address-card"></i> Contact Us</a>
             </li>
             <li class="sidenav-item">
-                <a href="/faq"><i class="fas fa-question"></i> FAQs</a>
+                <a href="/faq" data-toggle="tooltip" data-placement="bottom" title="Frequently Asked Questions"><i class="fas fa-question"></i> FAQs</a>
             </li>
             <li class="sidenav-item">
-                <a href="/settings"><i class="fas fa-cog"></i> Settings</a>
+                <a href="/settings" data-toggle="tooltip" data-placement="bottom" title="Settings"><i class="fas fa-cog"></i> Settings</a>
             </li>
             
            
             <% if (!currentUser) { %>
                 <li class="sidenav-item">
-                    <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a href="/login" data-toggle="tooltip" data-placement="bottom" title="Login"><i class="fas fa-sign-in-alt"></i> Login</a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="/register"><i class="fas fa-user-plus"></i> Register</a>
+                    <a href="/register" data-toggle="tooltip" data-placement="bottom" title="Register"><i class="fas fa-user-plus"></i> Register</a>
                 </li>
             <% } else { %>
                 <li class="sidenav-item">
-                    <a href="/favorites"><i class="fas fa-bookmark"></i> Favorites</a>
+                    <a href="/favorites" data-toggle="tooltip" data-placement="bottom" title="Favorites"><i class="fas fa-bookmark"></i> Favorites</a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a href="/logout" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
             <% } %>
 
             <li class="sidenav-item" >               
-                <a href=# onClick="copyToClipboard()">
-                    <i class="fa fa-share-alt" aria-hidden="true"></i> Invite a friend</button>
+                <a href=# onClick="copyToClipboard()" data-toggle="tooltip" data-placement="bottom" title="Invite a Friend">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i> Invite a Friend</button>
                 </a>
                   
             </li>
