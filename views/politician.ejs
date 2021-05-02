@@ -13,7 +13,7 @@
 				<div class="card mb-3" data-toggle="tooltip" data-placement="bottom" title="<%= info.full_name %>'s General Information">
 					<div class="row g-0 info-card">
 						<div class="col-md-4">
-							<img src="<%= info.image_url %> " alt="Image of <%=  %> ">
+							<img src="<%= info.image_url %> " alt="Image of <%= info.full_name %> ">
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
@@ -61,7 +61,9 @@
 					<% articles.forEach((article)=> { %>
 						<li>
 							<div class="card" data-toggle="tooltip" data-placement="bottom" title="Article: <%= article.title %>">
-								<img src="<%= article.image %> " class="card-img-top" alt="...">
+								<% if (article.image !== 'None') { %>
+									<img src="<%= article.image %> " class="card-img-top" alt="...">								 
+								<% } %>
 								<div class="card-body">
 									<a class="article-text" href="<%= article.url %> " target="_blank">
 										<h5 class="card-title">
